@@ -1,0 +1,28 @@
+2017-07-14-14-17-20-141  LNOTSET  no   (.\NetService.cpp 135) 操作系统为_WIN32 
+
+2017-07-14-14-17-20-144  LNOTSET  no   (.\ThreadIOCP.cpp 58)  完成端口开始接收数据 
+
+2017-07-14-14-17-20-144  LNOTSET  no   (.\ThreadIOCP.cpp 58)  完成端口开始接收数据 
+
+2017-07-14-14-17-20-217  LNOTSET  no   (.\ThreadPoolModule.cpp 397)  增加线程条数 2
+ 
+2017-07-14-14-17-20-217  LNOTSET  no   (.\CommunicationManager.cpp 774) 通知上层新连接到达线程开始运行
+
+2017-07-14-14-17-20-223  LNOTSET  no   (.\NetService.cpp 611) 通道0887FB10创建成功, new socket 3408, szRemoteIP:192.168.1.47, 		uiRemotePort:10002, szLocalIP:192.168.1.47, uiLocalPort:8571
+ 
+2017-07-14-14-18-43-749  LNOTSET  no   (.\WinTcpSocket.cpp 367)  CWinTcpSocket::WSARecv error 10054 
+
+2017-07-14-14-18-43-749  LNOTSET  no   (.\SocketChanel.cpp 496) 通道0887FB10,接收数据失败
+
+2017-07-14-14-18-43-750  LNOTSET  no   (.\ThreadIOCP.cpp 195) 接收数据失败,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:8571 
+
+2017-07-14-14-18-43-760  LNOTSET  no   (.\CommunicationManager.cpp 269) 通知上层通道0887FB10中断, szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:8571 
+ 
+2017-07-14-14-18-43-760  LNOTSET  no   (.\CommunicationManager.cpp 274) 通知上层通道0887FB10中断,通知完毕, szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:8571 
+ 
+2017-07-14-14-18-45-752  LNOTSET  no   (.\SocketChanel.cpp 304) 通道0887FB10被请求关闭, localport=8571, RemotePort=10002 
+
+2017-07-14-14-18-45-758  LNOTSET  no   (.\CommunicationManager.cpp 404) 释放通道0887FB10内存
+ 
+2017-07-14-14-18-45-763  LNOTSET  no   (.\NetService.cpp 611) 通道08895A08创建成功, new socket 3536, szRemoteIP:192.168.1.47, 		uiRemotePort:10002, szLocalIP:192.168.1.47, uiLocalPort:8624
+ 

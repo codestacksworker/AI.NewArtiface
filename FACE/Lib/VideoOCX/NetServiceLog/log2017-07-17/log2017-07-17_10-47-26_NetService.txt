@@ -1,0 +1,306 @@
+2017-07-17-10-47-26-871  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\netservice.cpp 135) 操作系统为_WIN32 
+
+2017-07-17-10-47-26-874  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 58)  完成端口开始接收数据 
+
+2017-07-17-10-47-26-874  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 58)  完成端口开始接收数据 
+
+2017-07-17-10-47-26-882  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadpoolmodule.cpp 397)  增加线程条数 2
+ 
+2017-07-17-10-47-26-883  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\communicationmanager.cpp 774) 通知上层新连接到达线程开始运行
+
+2017-07-17-10-47-26-917  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\netservice.cpp 611) 通道09681918创建成功, new socket 3404, szRemoteIP:192.168.1.47, 		uiRemotePort:10002, szLocalIP:192.168.1.47, uiLocalPort:36587
+ 
+2017-07-17-10-47-26-917  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=356 
+
+2017-07-17-10-47-26-917  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=356 
+
+2017-07-17-10-47-27-003  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-003  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-003  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=52 
+
+2017-07-17-10-47-27-003  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=52 
+
+2017-07-17-10-47-27-025  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-025  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-066  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-066  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-066  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=52 
+
+2017-07-17-10-47-27-066  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=52 
+
+2017-07-17-10-47-27-128  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-128  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-129  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=52 
+
+2017-07-17-10-47-27-129  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=52 
+
+2017-07-17-10-47-27-188  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-189  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-189  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=52 
+
+2017-07-17-10-47-27-189  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=52 
+
+2017-07-17-10-47-27-248  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-248  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-248  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=52 
+
+2017-07-17-10-47-27-248  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=52 
+
+2017-07-17-10-47-27-308  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-308  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-308  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=52 
+
+2017-07-17-10-47-27-308  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=52 
+
+2017-07-17-10-47-27-368  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-368  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-370  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-370  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-408  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-408  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-420  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-420  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-420  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-420  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-420  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-421  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-421  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-421  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-421  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-421  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-424  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-424  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-424  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-424  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-424  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-424  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-424  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-425  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-427  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-427  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-427  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-427  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-430  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-430  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-431  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-431  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-434  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-434  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-434  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-434  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-438  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-438  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-438  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-439  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-442  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-442  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-443  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-443  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-447  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-447  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-447  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-447  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-450  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-450  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-466  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-466  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-467  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-467  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-501  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-501  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-501  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-501  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-534  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-534  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-534  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-534  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-565  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-565  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-565  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-565  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-595  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-595  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-595  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-596  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-627  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-628  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-628  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-628  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=116 
+
+2017-07-17-10-47-27-659  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-27-659  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-28-502  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=72 
+
+2017-07-17-10-47-28-502  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=72 
+
+2017-07-17-10-47-28-593  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-28-593  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-30-214  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=72 
+
+2017-07-17-10-47-30-214  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=72 
+
+2017-07-17-10-47-30-289  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-30-289  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-31-897  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=16 
+
+2017-07-17-10-47-31-897  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=16 
+
+2017-07-17-10-47-31-909  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=72 
+
+2017-07-17-10-47-31-909  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=72 
+
+2017-07-17-10-47-31-978  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-31-978  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-32-471  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-32-471  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-33-603  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=72 
+
+2017-07-17-10-47-33-603  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=72 
+
+2017-07-17-10-47-33-673  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-33-673  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-35-914  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=16 
+
+2017-07-17-10-47-35-914  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=16 
+
+2017-07-17-10-47-36-482  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-36-482  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-39-917  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=16 
+
+2017-07-17-10-47-39-917  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=16 
+
+2017-07-17-10-47-40-492  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-40-492  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-43-919  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=16 
+
+2017-07-17-10-47-43-919  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=16 
+
+2017-07-17-10-47-44-503  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-44-503  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-46-897  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\communicationmanager.cpp 549) ------------当前网络库状态参数如下------------
+
+2017-07-17-10-47-46-897  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\communicationmanager.cpp 553) 当前网络库中通道数目是 1 
+
+2017-07-17-10-47-46-897  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\communicationmanager.cpp 567) 通道参数N szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587, ChannelStatus：0,m_uiRefCount:0, m_bIOCPNoUse:1,m_uiChnIng:0 
+
+2017-07-17-10-47-47-922  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=16 
+
+2017-07-17-10-47-47-922  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=16 
+
+2017-07-17-10-47-48-513  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-48-513  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-51-925  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 146) 通道09681918准备发送数据0, localport=36587, RemotePort=10002, unDataLen=16 
+
+2017-07-17-10-47-51-925  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\socketchanel.cpp 215) 通道09681918成功发送数据*, localport=36587, RemotePort=10002, unDataLen=16 
+
+2017-07-17-10-47-52-524  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 174) 网络库:通道09681918回调数据包,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+
+2017-07-17-10-47-52-524  LNOTSET  no   (f:\综合视频管理平台\shenxing_v201-modfiy\code\common\netservicelib\src\threadiocp.cpp 182) 网络库:通道09681918回调数据包完毕,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:36587 
+

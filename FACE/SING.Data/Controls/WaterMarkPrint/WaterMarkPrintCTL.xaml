@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="SING.Data.Controls.WaterMarkPrint.WaterMarkPrintCTL"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="clr-namespace:SING.Data.Controls.WaterMarkPrint"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+
+        <Style x:Key="SocreStyle" TargetType="{x:Type Label}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Label}">
+                        <Border>
+                            <Grid>
+                                <Ellipse x:Name="形状_1" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Fill="Transparent" Stroke="{TemplateBinding Background}"  StrokeThickness="3">
+                                    <!--<Ellipse.Effect>
+                                        <DropShadowEffect ShadowDepth="0" BlurRadius="22" Color="#FF646464"/>
+                                    </Ellipse.Effect>-->
+                                </Ellipse>
+                                <Path Stroke="{TemplateBinding Background}" StrokeThickness="1.3">
+                                    <Path.Data>
+                                        <PathGeometry>
+                                            <PathGeometry.Figures>
+                                                <PathFigureCollection>
+                                                    <PathFigure StartPoint="10,50">
+                                                        <PathFigure.Segments>
+                                                            <PathSegmentCollection>
+                                                                <ArcSegment Size="40,40" IsLargeArc="False" SweepDirection="CounterClockwise" Point="22,78" />
+                                                            </PathSegmentCollection>
+                                                        </PathFigure.Segments>
+                                                    </PathFigure>
+                                                </PathFigureCollection>
+                                            </PathGeometry.Figures>
+                                        </PathGeometry>
+                                    </Path.Data>
+                                </Path>
+                                <Path Stroke="{TemplateBinding Background}" StrokeThickness="1.3">
+                                    <Path.Data>
+                                        <PathGeometry>
+                                            <PathGeometry.Figures>
+                                                <PathFigureCollection>
+                                                    <PathFigure StartPoint="78,78">
+                                                        <PathFigure.Segments>
+                                                            <PathSegmentCollection>
+                                                                <ArcSegment Size="40,40" IsLargeArc="False" SweepDirection="CounterClockwise" Point="90,50" />
+                                                            </PathSegmentCollection>
+                                                        </PathFigure.Segments>
+                                                    </PathFigure>
+                                                </PathFigureCollection>
+                                            </PathGeometry.Figures>
+                                        </PathGeometry>
+                                    </Path.Data>
+                                </Path>
+                                <controls:CirculaPanel Width="90" Height="90" Margin="5">
+                                    <Label Content="" FontSize="10" Foreground="{TemplateBinding Background}"/>
+                                    <Label Content="数" FontSize="10" Foreground="{TemplateBinding Background}"/>
+                                    <Label Content="分" FontSize="10" Foreground="{TemplateBinding Background}"/>
+                                    <Label Content="对" FontSize="10" Foreground="{TemplateBinding Background}"/>
+                                    <Label Content="比" FontSize="10" Foreground="{TemplateBinding Background}"/>
+                                    <Label Content="脸" FontSize="10" Foreground="{TemplateBinding Background}"/>
+                                    <Label Content="人" FontSize="10" Foreground="{TemplateBinding Background}"/>
+                                    <Label/>
+                                    <Label/>
+                                    <Label/>
+                                    <Label/>
+                                    <Label/>
+                                    <Label/>
+                                    <Label/>
+                                </controls:CirculaPanel>
+                                <Label FontSize="20" FontWeight="Bold" Foreground="{TemplateBinding Background}" HorizontalContentAlignment="Center" VerticalAlignment="Bottom">
+                                    <Label.Style>
+                                        <Style TargetType="Label">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=IsStandard,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type UserControl}}}" Value="True">
+                                                    <Setter Property="Content" Value="√"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Path=IsStandard,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type UserControl}}}" Value="False">
+                                                    <Setter Property="Content" Value="×"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Label.Style>
+                                </Label>
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding Content}"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Label x:Name="lb_Text" Content="90" Foreground="Red" Background="#FFD6DBE9" FontSize="18" Style="{StaticResource SocreStyle}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+    </Grid>
+</UserControl>

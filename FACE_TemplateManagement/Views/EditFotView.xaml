@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="FACE_TemplateManagement.Views.EditFotView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FACE_TemplateManagement.Views"
+             xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Navigation"
+             xmlns:converter="clr-namespace:SING.Infrastructure.Converter;assembly=SING.Infrastructure"
+             xmlns:converter1="clr-namespace:FACE_TemplateManagement.Converter"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="400" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/FACE_TemplateManagement;Component/StyleResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="{Binding Converter={StaticResource UcBackgroundConvert}}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <telerik:RadTabControl x:Name="RadTabControl1" BorderBrush="Black" Margin="0,-28,0,0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{Binding Converter={StaticResource UcBackgroundConvert}}">
+            <telerik:RadTabItem Header="模板编辑"  Margin="0,0,0,0" Height="24">
+                <local:EditFotInfoView HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </telerik:RadTabItem>
+        </telerik:RadTabControl>
+
+        <local:FotToolBar Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+    </Grid>
+</UserControl>

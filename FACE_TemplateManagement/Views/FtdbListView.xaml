@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="FACE_TemplateManagement.Views.FtdbListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FACE_TemplateManagement.Views"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:converter="clr-namespace:SING.Infrastructure.Converter;assembly=SING.Infrastructure" 
+             xmlns:primitives="http://schemas.microsoft.com/wpf/2008/toolkit"
+             xmlns:controls="clr-namespace:SING.Data.Controls;assembly=SING.Data"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:converter1="clr-namespace:FACE_TemplateManagement.Converter"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/FACE_TemplateManagement;component/StyleResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <converter1:EnabledStatusConvert x:Key="EnabledStatusConvert"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+
+        <!--AlternateRowStyle="{DynamicResource AlternateRow}" RowStyle="{DynamicResource NormalRow}"-->
+        <telerik:RadGridView ItemsSource="{Binding FtdbCV}" CurrentItem="{Binding CurrentFtdb}" Margin="0" x:Name="rgvFtdbList"      
+                              AlternateRowStyle="{DynamicResource AlternateRow}"  
+                             ShowColumnSortIndexes="True" CanUserFreezeColumns="False" AutoGenerateColumns="False"  IsReadOnly="True"  CanUserResizeColumns="True" 
+                             ShowGroupPanel="False" RowIndicatorVisibility="Collapsed"  telerik:RadDragAndDropManager.AllowDrop="True"  IsFilteringAllowed="False"		  
+                             RowDetailsVisibilityMode="Visible" SelectionUnit="FullRow" SelectionMode="Single"  AlternationCount="2" IsSynchronizedWithCurrentItem="True">
+            <telerik:RadGridView.Resources>
+
+                <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="Yellow"/>
+
+                <Style x:Key="{x:Type TextBlock}" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+                    <Setter Property="VerticalAlignment" Value="Stretch" />
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+
+                    <!--<Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Foreground" Value="Gray"/>-->
+                </Style>
+
+
+                <Style x:Key="{x:Type Grid}" TargetType="{x:Type Grid}">
+                    <Setter Property="VerticalAlignment" Value="Stretch" />
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                </Style>
+
+
+                <Style x:Key="{x:Type telerik:GridViewDataColumn}" TargetType="{x:Type telerik:GridViewDataColumn}">
+                    <Setter Property="HeaderTextAlignment" Value="Center" />
+                    <Setter Property="TextAlignment" Value="Center" />
+                </Style>
+                <!--<Style x:Key="{x:Type telerik:GridViewRow}" TargetType="{x:Type telerik:GridViewRow}">
+                        <Style.Triggers >
+                            <Trigger Property="IsSelected"  Value="True">
+                                <Setter Property="Background" Value="LightGray"></Setter>
+                                <Setter Property="BorderBrush" Value="LightGray"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>-->
+            </telerik:RadGridView.Resources>
+            <!--<i:Interaction.Behaviors>
+                    <converter1:SelectedSyncBehavior SelectedItems="{Binding .FaceTemplateDBSelectItems}" />
+                </i:Interaction.Behaviors>-->
+            <telerik:RadGridView.Columns >
+                <controls:RowIndexColumn Header="序号" Width="35" HeaderTextAlignment="Center" TextAlignment="Center"/>
+                <!--<telerik:GridViewSelectColumn>
+                        <telerik:GridViewSelectColumn.Header>
+                            <CheckBox x:Name="ckbSelectedAll" Content="全选" Checked="ckbSelectedAll_Checked" Unchecked="ckbSelectedAll_Unchecked" IsChecked="False" />
+                        </telerik:GridViewSelectColumn.Header>
+                        <telerik:GridViewSelectColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <CheckBox x:Name="chbox" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" Margin="0,6,0,0" HorizontalContentAlignment="Center" IsChecked="{Binding ISSELECTED, Mode=TwoWay}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </telerik:GridViewSelectColumn.CellTemplate>
+                    </telerik:GridViewSelectColumn>-->
+                <!--<telerik:GridViewColumn IsReadOnly="False" Header="" Width="26">
+                        <telerik:GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <CheckBox x:Name="chbox" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" Margin="0,6,0,0" HorizontalContentAlignment="Center" IsChecked="{Binding ISSELECTED, Mode=TwoWay}" Checked="chbox_Checked"/>
+                                </Grid>
+                            </DataTemplate>
+                        </telerik:GridViewColumn.CellTemplate>
+                    </telerik:GridViewColumn>-->
+                <telerik:GridViewDataColumn Header="模板库名称" DataMemberBinding="{Binding TemplateDbName}" Width="100" HeaderTextAlignment="Center" TextAlignment="Left"/>
+                <telerik:GridViewDataColumn Header="启用状态" DataMemberBinding="{Binding IsUsed ,Converter={StaticResource EnabledStatusConvert}}" Width="Auto" HeaderTextAlignment="Center" TextAlignment="Center"/>
+                <telerik:GridViewDataColumn Header="数量" DataMemberBinding="{Binding TemplateDbSize}" Width="Auto" MinWidth="80" HeaderTextAlignment="Center" TextAlignment="Center"/>
+                <telerik:GridViewDataColumn Header="容量" DataMemberBinding="{Binding TemplateDbCapacity}" Width="Auto" MinWidth="80" HeaderTextAlignment="Center" TextAlignment="Center"/>
+                <telerik:GridViewDataColumn Header="备注" DataMemberBinding="{Binding TemplateDbDescription}" Width="*" HeaderTextAlignment="Center" TextAlignment="Left"/>
+                <telerik:GridViewDataColumn Header="创建时间" DataMemberBinding="{Binding CreateTime,Converter={StaticResource DateTimeFormattingConverter}}" Width="140" HeaderTextAlignment="Center" TextAlignment="Left"/>
+
+            </telerik:RadGridView.Columns>
+
+
+            <telerik:RadContextMenu.ContextMenu>
+                <telerik:RadContextMenu  >
+                    <telerik:RadContextMenu.Items>
+                        <telerik:RadMenuItem Header="新 建" Command="{Binding CommandCreateFtdb}"/>
+                        <telerik:RadMenuItem Header="删 除" Command="{Binding CommandDeleteFtdb}"/>
+                    </telerik:RadContextMenu.Items>
+                </telerik:RadContextMenu>
+            </telerik:RadContextMenu.ContextMenu>
+        </telerik:RadGridView>
+    </Grid>
+</UserControl>

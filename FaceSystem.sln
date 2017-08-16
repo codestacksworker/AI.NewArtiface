@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev_Shell", "FACE\Shell\Dev_Shell.csproj", "{EA6FFD9C-36E8-4432-BD3D-FFF3A5D53A09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev_SING.Data", "FACE\SING.Data\Dev_SING.Data.csproj", "{35A1C45E-F5F7-4EE7-8681-3228648EB93B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev_SING.Service", "FACE\SING.Service\Dev_SING.Service.csproj", "{4408F396-E180-45F8-BD21-E02B76FE54B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FACE_TemplateManagement", "FACE_TemplateManagement\FACE_TemplateManagement.csproj", "{41CFB16B-8FEC-4F6B-A534-861BB16E773E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FACE_ChannelManagement", "FACE_ChannelManagement\FACE_ChannelManagement.csproj", "{6E61FA4C-72BB-416B-9BBB-076EAD7A810D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev_SING.Infrastructure", "FACE\SING.Infrastructure\Dev_SING.Infrastructure.csproj", "{BC55DD33-7901-48E3-B094-BA6D68C323AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dev_SING.Resource", "FACE\SING.Resource\Dev_SING.Resource.csproj", "{40122706-5A01-4307-BA59-B47D489038DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FACE_MonitorTasks", "FACE_MonitorTasks\FACE_MonitorTasks.csproj", "{B1C537D7-0994-4A1A-8A73-6C78F1E7F36F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FACE_AlertRecord", "FACE_AlertRecord\FACE_AlertRecord.csproj", "{588FF265-19EA-4715-BE27-23C2393E7ED2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FACE_DynamicComparison", "FACE_DynamicComparison\FACE_DynamicComparison.csproj", "{4B6C435F-C06F-485F-AAF0-6C1681AD25EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FACE_DynamicComparisonTests", "FACE_DynamicComparisonTests\FACE_DynamicComparisonTests.csproj", "{BBEB1174-5960-429E-A384-7968C51C5169}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA6FFD9C-36E8-4432-BD3D-FFF3A5D53A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA6FFD9C-36E8-4432-BD3D-FFF3A5D53A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA6FFD9C-36E8-4432-BD3D-FFF3A5D53A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA6FFD9C-36E8-4432-BD3D-FFF3A5D53A09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35A1C45E-F5F7-4EE7-8681-3228648EB93B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35A1C45E-F5F7-4EE7-8681-3228648EB93B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35A1C45E-F5F7-4EE7-8681-3228648EB93B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35A1C45E-F5F7-4EE7-8681-3228648EB93B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4408F396-E180-45F8-BD21-E02B76FE54B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4408F396-E180-45F8-BD21-E02B76FE54B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4408F396-E180-45F8-BD21-E02B76FE54B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4408F396-E180-45F8-BD21-E02B76FE54B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41CFB16B-8FEC-4F6B-A534-861BB16E773E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41CFB16B-8FEC-4F6B-A534-861BB16E773E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41CFB16B-8FEC-4F6B-A534-861BB16E773E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41CFB16B-8FEC-4F6B-A534-861BB16E773E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E61FA4C-72BB-416B-9BBB-076EAD7A810D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E61FA4C-72BB-416B-9BBB-076EAD7A810D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E61FA4C-72BB-416B-9BBB-076EAD7A810D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E61FA4C-72BB-416B-9BBB-076EAD7A810D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC55DD33-7901-48E3-B094-BA6D68C323AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC55DD33-7901-48E3-B094-BA6D68C323AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC55DD33-7901-48E3-B094-BA6D68C323AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC55DD33-7901-48E3-B094-BA6D68C323AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40122706-5A01-4307-BA59-B47D489038DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40122706-5A01-4307-BA59-B47D489038DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40122706-5A01-4307-BA59-B47D489038DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40122706-5A01-4307-BA59-B47D489038DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1C537D7-0994-4A1A-8A73-6C78F1E7F36F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1C537D7-0994-4A1A-8A73-6C78F1E7F36F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1C537D7-0994-4A1A-8A73-6C78F1E7F36F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1C537D7-0994-4A1A-8A73-6C78F1E7F36F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{588FF265-19EA-4715-BE27-23C2393E7ED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{588FF265-19EA-4715-BE27-23C2393E7ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{588FF265-19EA-4715-BE27-23C2393E7ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{588FF265-19EA-4715-BE27-23C2393E7ED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B6C435F-C06F-485F-AAF0-6C1681AD25EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B6C435F-C06F-485F-AAF0-6C1681AD25EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B6C435F-C06F-485F-AAF0-6C1681AD25EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B6C435F-C06F-485F-AAF0-6C1681AD25EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBEB1174-5960-429E-A384-7968C51C5169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBEB1174-5960-429E-A384-7968C51C5169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBEB1174-5960-429E-A384-7968C51C5169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBEB1174-5960-429E-A384-7968C51C5169}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		RESX_NeutralResourcesLanguage = zh-Hans
+	EndGlobalSection
+EndGlobal

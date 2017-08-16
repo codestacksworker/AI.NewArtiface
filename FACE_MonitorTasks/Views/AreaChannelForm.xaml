@@ -1,0 +1,103 @@
+﻿<telerik:RadWindow 
+             x:Class="FACE_MonitorTasks.Views.AreaChannelForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FACE_MonitorTasks.Views" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" Header="区域通道" WindowStartupLocation="CenterOwner" ResizeMode="CanMinimize" Width="700" Height="500" BorderThickness="0"
+             Loaded="RadWindow_Loaded" Closed="RadWindow_Closed" Activated="RadWindow_Activated" Deactivated="RadWindow_Deactivated">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <Border>
+                    <telerik:RadGridView ItemsSource="{Binding AreaChannelList}"  IsReadOnly="True" CanUserInsertRows="False" ShowColumnSortIndexes="True" CanUserFreezeColumns="False" AutoGenerateColumns="False"                                             
+                                CanUserResizeColumns="True" ShowGroupPanel="False" RowIndicatorVisibility="Collapsed" telerik:RadDragAndDropManager.AllowDrop="True"  IsFilteringAllowed="False"       
+                                RowDetailsVisibilityMode="Visible" SelectionUnit="FullRow" SelectionMode="Single"  AlternationCount="2" DataLoadMode="Asynchronous" 
+                                ScrollMode="RealTime" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                HorizontalContentAlignment="Center">
+                        <telerik:RadGridView.ChildTableDefinitions>
+                            <telerik:GridViewTableDefinition />
+                        </telerik:RadGridView.ChildTableDefinitions>
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewDataColumn Header="区域/通道名称" Width="280">
+                                <telerik:GridViewDataColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox IsChecked="{Binding IsChecked,Mode=TwoWay}" Margin="5,0,0,0">
+                                                <i:Interaction.Triggers>
+                                                    <i:EventTrigger EventName="Checked">
+                                                        <i:InvokeCommandAction Command="{Binding DataContext.CommandChecked, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type telerik:RadGridView}}}" CommandParameter="2"/>
+                                                    </i:EventTrigger>
+                                                    <i:EventTrigger EventName="Unchecked">
+                                                        <i:InvokeCommandAction Command="{Binding DataContext.CommandUnChecked,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type telerik:RadGridView}}}" CommandParameter="2"/>
+                                                    </i:EventTrigger>
+                                                </i:Interaction.Triggers>
+                                            </CheckBox>
+                                            <TextBlock Text="{Binding Area}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </telerik:GridViewDataColumn.CellTemplate>
+                            </telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Describe}" Header="描述" Width="*"/>
+                        </telerik:RadGridView.Columns>
+
+                        <telerik:RadGridView.HierarchyChildTemplate>
+                            <DataTemplate>
+                                <telerik:RadGridView x:Name="RadGridView1" GroupRenderMode="Flat"
+										        BorderThickness="0,1,0,1"
+										        GridLinesVisibility="None"
+										        CanUserFreezeColumns="False"
+										        AutoGenerateColumns="False"
+										        ItemsSource="{Binding AreaChannelChildList}"
+										        ShowGroupPanel="False"
+                                                ShowColumnHeaders="False"
+										        IsReadOnly="True">
+                                    <telerik:RadGridView.Columns>
+                                        <telerik:GridViewDataColumn>
+                                            <telerik:GridViewDataColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <CheckBox IsChecked="{Binding IsChecked,Mode=TwoWay}" Margin="5,0,0,0">
+                                                            <i:Interaction.Triggers>
+                                                                <i:EventTrigger EventName="Checked">
+                                                                    <i:InvokeCommandAction Command="{Binding DataContext.CommandChildChecked,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type telerik:RadGridView}}}"  CommandParameter="2"/>
+                                                                </i:EventTrigger>
+                                                                <i:EventTrigger EventName="Unchecked">
+                                                                    <i:InvokeCommandAction Command="{Binding DataContext.CommandChildUnChecked,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type telerik:RadGridView}}}" CommandParameter="2"/>
+                                                                </i:EventTrigger>
+                                                            </i:Interaction.Triggers>
+                                                        </CheckBox>
+                                                        <TextBlock Text="{Binding ChannelChild}"/>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </telerik:GridViewDataColumn.CellTemplate>
+                                        </telerik:GridViewDataColumn>
+                                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Describe}" Width="280"/>
+                                    </telerik:RadGridView.Columns>
+                                </telerik:RadGridView>
+                            </DataTemplate>
+                        </telerik:RadGridView.HierarchyChildTemplate>
+                    </telerik:RadGridView>
+                </Border>
+            </ScrollViewer>
+        </Grid>
+
+
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Horizontal" Height="25" VerticalAlignment="Center">
+                <TextBlock VerticalAlignment="Center" Margin="15,0"><Hyperlink Command="{Binding CommandCheckAll, Mode=TwoWay}"  CommandParameter="2"><Run Text="全选"/></Hyperlink></TextBlock>
+                <TextBlock VerticalAlignment="Center" Margin="15,0" Width="80"><Hyperlink Command="{Binding CommandCancelAll, Mode=TwoWay}" CommandParameter="2"><Run Text="取消全选"/></Hyperlink></TextBlock>
+                <TextBlock Text="已选择5个区域，10个通道" Margin="10,0,0,0" VerticalAlignment="Center"/>
+            </StackPanel>
+            <telerik:RadButton Command="{Binding CommandSelectedChannelForm}"  Content="确定" Width="80"  BorderThickness="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"/>
+        </Grid>
+    </Grid>
+</telerik:RadWindow>

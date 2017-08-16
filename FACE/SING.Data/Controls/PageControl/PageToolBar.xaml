@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="SING.Data.Controls.PageControl.PageToolBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SING.Data.Controls.PageControl"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             mc:Ignorable="d" d:DesignWidth="1300" d:DesignHeight="50" Margin="0"  Padding="0">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel  Orientation="Horizontal" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Right">
+            <TextBlock x:Name="lblPageTotal" Margin="15,0" VerticalAlignment="Center">
+                <Run Text="共"/>
+                <Run Text="1"/>
+                <Run Text="条数据，共"/>
+                 <Run Text="1"/>
+                 <Run Text="页"/>
+            </TextBlock>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Stretch">
+            <telerik:RadButton  Content="首页(F)"  Name="btnFirstPage" MinWidth="60" VerticalAlignment="Center"></telerik:RadButton>
+            <telerik:RadButton  IsEnabled="{Binding PreviousPageIsEnable}" Content="&lt;&lt;" Name="btnPrevPage"  MinWidth="30" VerticalAlignment="Center" ></telerik:RadButton>
+            <TextBox   Margin="5,0,2,0"       Text="{Binding PageNow}"           x:Name="btnCurPage"   MinWidth="50" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Stretch" />
+            <telerik:RadButton IsEnabled="{Binding NextPageIsEnable}" Content=">>"       Name="btnNextPage"  MinWidth="30" VerticalAlignment="Center" ></telerik:RadButton>
+            <telerik:RadButton  Content="尾页(L)"  Name="btnLastPage"  MinWidth="60" VerticalAlignment="Center"></telerik:RadButton>
+        </StackPanel>
+    </Grid>
+
+</UserControl>
+

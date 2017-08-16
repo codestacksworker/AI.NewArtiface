@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35A1C45E-F5F7-4EE7-8681-3228648EB93B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SING.Data</RootNamespace>
+    <AssemblyName>SING.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Apache.NMS">
+      <HintPath>..\Lib\Apache.NMS.dll</HintPath>
+    </Reference>
+    <Reference Include="Apache.NMS.ActiveMQ">
+      <HintPath>..\Lib\Apache.NMS.ActiveMQ.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.VideoOCXLib">
+      <HintPath>..\Lib\AxInterop.VideoOCXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core">
+      <HintPath>..\Lib\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsPresentation">
+      <HintPath>..\Lib\GMap.NET.WindowsPresentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.VideoOCXLib">
+      <HintPath>..\Lib\Interop.VideoOCXLib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\Lib\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Chart, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Charting, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.EntityFramework, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseTools\AppConfig.cs" />
+    <Compile Include="BaseTools\AssistTools.cs" />
+    <Compile Include="BaseTools\CustomAttributeHelper.cs" />
+    <Compile Include="BaseTools\EnumUtils.cs" />
+    <Compile Include="BaseTools\Extends.cs" />
+    <Compile Include="BaseTools\FACEIdentity.cs" />
+    <Compile Include="BaseTools\MessageBoxHelper.cs" />
+    <Compile Include="BaseTools\MQHelper.cs" />
+    <Compile Include="BaseTools\MQService.cs" />
+    <Compile Include="BaseTools\MQSubMessageParameters.cs" />
+    <Compile Include="BaseTools\TaskAsyncHelper.cs" />
+    <Compile Include="BaseTools\StatusInterval.cs" />
+    <Compile Include="BaseTools\XmlHelper.cs" />
+    <Compile Include="Controls\GmapControl\Map.cs" />
+    <Compile Include="Controls\GmapControl\Markers\CustomMarker.xaml.cs">
+      <DependentUpon>CustomMarker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GmapControl\Models\PointLatLngImg.cs" />
+    <Compile Include="Controls\NumTextBox.cs" />
+    <Compile Include="Controls\PageControl\PageToolBar.xaml.cs">
+      <DependentUpon>PageToolBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PictureControls.xaml.cs">
+      <DependentUpon>PictureControls.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PictureIndicateControl.xaml.cs">
+      <DependentUpon>PictureIndicateControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RadGridViewCustomColumn.cs" />
+    <Compile Include="Controls\TreeControl\Converter\TreeConvert.cs" />
+    <Compile Include="Controls\TreeControl\Models\DataItem.cs" />
+    <Compile Include="Controls\TreeControl\Models\DataItemCollection.cs" />
+    <Compile Include="Controls\TreeControl\TreeControl.xaml.cs">
+      <DependentUpon>TreeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TreeControl\TreeViewModel.cs" />
+    <Compile Include="Controls\VideoControl\AxDZVideoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\VideoControl\AxDZVideoControl.Designer.cs">
+      <DependentUpon>AxDZVideoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\VideoControl\AxVideoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\VideoControl\AxVideoControl.Designer.cs">
+      <DependentUpon>AxVideoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\VideoControl\IVideoBase.cs" />
+    <Compile Include="Controls\VideoControl\IVideoManager.cs" />
+    <Compile Include="Controls\VideoControl\VideoManager.cs" />
+    <Compile Include="Controls\VideoControl\VideowParameter.cs" />
+    <Compile Include="Controls\Video\RealVideoManager.cs" />
+    <Compile Include="Controls\Video\RealVideoPlayer.xaml.cs">
+      <DependentUpon>RealVideoPlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Video\RecordManager.cs" />
+    <Compile Include="Controls\Video\BaseManager.cs" />
+    <Compile Include="Controls\Video\VideoPlayer.xaml.cs">
+      <DependentUpon>VideoPlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Video\VideoSdkHelper\Enum\EnumLib.cs" />
+    <Compile Include="Controls\Video\VideoSdkHelper\Models\VIdeoItem.cs" />
+    <Compile Include="Controls\Video\VideoSdkHelper\RealVideoPlayerWin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Video\VideoSdkHelper\RealVideoPlayerWin.Designer.cs">
+      <DependentUpon>RealVideoPlayerWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Video\VideoSdkHelper\Struct\StructLib.cs" />
+    <Compile Include="Controls\Video\VideoSdkHelper\SysParameter.cs" />
+    <Compile Include="Controls\Video\VideoSdkHelper\VideoClient.cs" />
+    <Compile Include="Controls\Video\VideoSdkHelper\ViedeoPlayerWin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Video\VideoSdkHelper\ViedeoPlayerWin.Designer.cs">
+      <DependentUpon>ViedeoPlayerWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WaterMarkPrint\CirculaPanel.cs" />
+    <Compile Include="Controls\WaterMarkPrint\RadialPanel.cs" />
+    <Compile Include="Controls\WaterMarkPrint\WaterMarkPrintCTL.xaml.cs">
+      <DependentUpon>WaterMarkPrintCTL.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Alarm.cs" />
+    <Compile Include="DAL\AlBase.cs" />
+    <Compile Include="DAL\Alert.cs" />
+    <Compile Include="DAL\Channel.cs" />
+    <Compile Include="DAL\NewCode\AlertInfo.cs" />
+    <Compile Include="DAL\NewCode\AlertsCmplogs.cs" />
+    <Compile Include="DAL\NewCode\Channel.cs" />
+    <Compile Include="DAL\NewCode\Condition\AlertInfoCondition.cs" />
+    <Compile Include="DAL\NewCode\Condition\ChannelCondition.cs" />
+    <Compile Include="DAL\NewCode\Condition\FaceObjectCondition.cs" />
+    <Compile Include="DAL\NewCode\Condition\JobMethodCondition.cs" />
+    <Compile Include="DAL\NewCode\Condition\JobsCondition.cs" />
+    <Compile Include="DAL\NewCode\Condition\RegionsCondition.cs" />
+    <Compile Include="DAL\NewCode\Condition\SysTypecodeDataCondition.cs" />
+    <Compile Include="DAL\NewCode\DataAcess.cs" />
+    <Compile Include="DAL\Data\AlarmData.cs" />
+    <Compile Include="DAL\Data\AlDataBase.cs" />
+    <Compile Include="DAL\Data\AlertData.cs" />
+    <Compile Include="DAL\Data\ChannelData.cs" />
+    <Compile Include="DAL\Data\DefChannelTypeData.cs" />
+    <Compile Include="DAL\Data\DefDbTypeData.cs" />
+    <Compile Include="DAL\Data\DefFaceObjTypeData.cs" />
+    <Compile Include="DAL\Data\FaceCaptureData.cs" />
+    <Compile Include="DAL\Data\FaceCmpViewData.cs" />
+    <Compile Include="DAL\Data\FaceObjectData.cs" />
+    <Compile Include="DAL\Data\FaceObjTempViewData.cs" />
+    <Compile Include="DAL\Data\FaceTagsData.cs" />
+    <Compile Include="DAL\Data\FaceTemplateData.cs" />
+    <Compile Include="DAL\Data\FaceTemplateDBData.cs" />
+    <Compile Include="DAL\Data\FcmpCaptureAlarmData.cs" />
+    <Compile Include="DAL\Data\FcmpRecodData.cs" />
+    <Compile Include="DAL\Data\FcmpRecordViewData.cs" />
+    <Compile Include="DAL\Data\JobData.cs" />
+    <Compile Include="DAL\Data\MethodData.cs" />
+    <Compile Include="DAL\Data\MonitorTasksReports.cs" />
+    <Compile Include="DAL\NewCode\ErrorType.cs" />
+    <Compile Include="DAL\NewCode\Pager.cs" />
+    <Compile Include="DAL\Data\RegionsData.cs" />
+    <Compile Include="DAL\Data\TaskStatistics.cs" />
+    <Compile Include="DAL\DefChannelType.cs" />
+    <Compile Include="DAL\DefDbType.cs" />
+    <Compile Include="DAL\DefFaceObjType.cs" />
+    <Compile Include="DAL\DefGender.cs" />
+    <Compile Include="DAL\FaceCapture.cs" />
+    <Compile Include="DAL\FaceObject.cs" />
+    <Compile Include="DAL\FaceTags.cs" />
+    <Compile Include="DAL\FaceTemplate.cs" />
+    <Compile Include="DAL\FaceTemplateDB.cs" />
+    <Compile Include="DAL\FcmpCaptureAlarm.cs" />
+    <Compile Include="DAL\FtStatus.cs" />
+    <Compile Include="DAL\NewCode\Data\AlertDetailData.cs" />
+    <Compile Include="DAL\NewCode\Data\AlertInfoData.cs" />
+    <Compile Include="DAL\NewCode\Data\AlertsCmplogsData.cs" />
+    <Compile Include="DAL\NewCode\Data\ChannelData.cs" />
+    <Compile Include="DAL\NewCode\Data\FaceCaptureData.cs" />
+    <Compile Include="DAL\NewCode\Data\FaceObjectData.cs" />
+    <Compile Include="DAL\NewCode\Data\FaceTemplateData.cs" />
+    <Compile Include="DAL\NewCode\Data\FaceTemplateDbData.cs" />
+    <Compile Include="DAL\NewCode\Data\FcmpCaptureAlarmData.cs" />
+    <Compile Include="DAL\NewCode\Data\JobChannelData.cs" />
+    <Compile Include="DAL\NewCode\Data\JobFaceObjectData.cs" />
+    <Compile Include="DAL\NewCode\Data\JobMethodData.cs" />
+    <Compile Include="DAL\NewCode\Data\JobsData.cs" />
+    <Compile Include="DAL\NewCode\Data\JobTemplateDbData.cs" />
+    <Compile Include="DAL\NewCode\Data\OriginalAlertsData.cs" />
+    <Compile Include="DAL\NewCode\Data\RegionsData.cs" />
+    <Compile Include="DAL\NewCode\Data\SecAlertsData.cs" />
+    <Compile Include="DAL\NewCode\Data\StatisticsData.cs" />
+    <Compile Include="DAL\NewCode\Data\SysSubscribeData.cs" />
+    <Compile Include="DAL\NewCode\Data\SysTypecodeData.cs" />
+    <Compile Include="DAL\NewCode\Data\SysUserData.cs" />
+    <Compile Include="DAL\NewCode\Data\TagsData.cs" />
+    <Compile Include="DAL\NewCode\Data\UIDataBase.cs" />
+    <Compile Include="DAL\NewCode\JobChannel.cs" />
+    <Compile Include="DAL\NewCode\JobFaceObject.cs" />
+    <Compile Include="DAL\NewCode\JobTemplateDb.cs" />
+    <Compile Include="DAL\NewCode\JobMethod.cs" />
+    <Compile Include="DAL\NewCode\Jobs.cs" />
+    <Compile Include="DAL\NewCode\AlertDetail.cs" />
+    <Compile Include="DAL\NewCode\FaceCapture.cs" />
+    <Compile Include="DAL\NewCode\FaceObject.cs" />
+    <Compile Include="DAL\NewCode\FaceTemplate.cs" />
+    <Compile Include="DAL\NewCode\FaceTemplateDb.cs" />
+    <Compile Include="DAL\NewCode\FcmpCaptureAlarm.cs" />
+    <Compile Include="DAL\NewCode\OriginalAlerts.cs" />
+    <Compile Include="DAL\NewCode\Regions.cs" />
+    <Compile Include="DAL\NewCode\SecAlerts.cs" />
+    <Compile Include="DAL\NewCode\Statistics.cs" />
+    <Compile Include="DAL\NewCode\SysSubscribe.cs" />
+    <Compile Include="DAL\NewCode\SysTypecode.cs" />
+    <Compile Include="DAL\NewCode\Tags.cs" />
+    <Compile Include="DAL\NewCode\UrlAttribute.cs" />
+    <Compile Include="DAL\ParamBase.cs" />
+    <Compile Include="DAL\Parameter.cs" />
+    <Compile Include="DAL\Regions.cs" />
+    <Compile Include="DAL\Relation.cs" />
+    <Compile Include="DAL\Result.cs" />
+    <Compile Include="DAL\ScheduleConvert\DataConvert.cs" />
+    <Compile Include="DAL\ScheduleConvert\ParameterConvert.cs" />
+    <Compile Include="DAL\StatusCode.cs" />
+    <Compile Include="DAL\SystemParameter.cs" />
+    <Compile Include="DAL\NewCode\SysUser.cs" />
+    <Compile Include="DAL\Video.cs" />
+    <Compile Include="EnumData.cs" />
+    <Compile Include="Help\BasicData.cs" />
+    <Compile Include="Help\Http\CookieItem.cs" />
+    <Compile Include="Help\Http\HttpCookieHelper.cs" />
+    <Compile Include="Help\Http\HttpHelper.cs" />
+    <Compile Include="Help\Http\HttpItem.cs" />
+    <Compile Include="Help\Http\HttpResult.cs" />
+    <Compile Include="Help\Http\PostDataType.cs" />
+    <Compile Include="Help\Http\ResultCookieType.cs" />
+    <Compile Include="Help\Http\ResultType.cs" />
+    <Compile Include="Help\ImageConvert.cs" />
+    <Compile Include="Controls\PageControl\IPageCondition.cs" />
+    <Compile Include="Help\Json\JsonHelper.cs" />
+    <Compile Include="Help\ProgressSattus.cs" />
+    <Compile Include="Help\QueryCondition.cs" />
+    <Compile Include="Help\QueryConditionAlertRecord.cs" />
+    <Compile Include="Help\QueryConditionCapRecord.cs" />
+    <Compile Include="Help\QueryConditionCmpRecord.cs" />
+    <Compile Include="Help\TimeConvert.cs" />
+    <Compile Include="Help\ValidIP.cs" />
+    <Compile Include="Logger\Logger.cs" />
+    <Compile Include="MenuViewModel.cs" />
+    <Compile Include="MQEvent.cs" />
+    <Compile Include="MQEventAggregator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ScheduleProcess\ScheduleCreate.cs" />
+    <Compile Include="ScheduleProcess\ScheduleDelete.cs" />
+    <Compile Include="ScheduleProcess\ScheduleFileProcess.cs" />
+    <Compile Include="ScheduleProcess\ScheduleGet.cs" />
+    <Compile Include="ScheduleProcess\ScheduleHeartBeat.cs" />
+    <Compile Include="ScheduleProcess\ScheduleMQProcess.cs" />
+    <Compile Include="ScheduleProcess\SchedulePhaseRecordSave.cs" />
+    <Compile Include="ScheduleProcess\ScheduleRecordGet.cs" />
+    <Compile Include="ScheduleProcess\ScheduleRecordSave.cs" />
+    <Compile Include="ScheduleProcess\ScheduleServer.cs" />
+    <Compile Include="ScheduleProcess\ScheduleUpdate.cs" />
+    <Compile Include="TClient.cs" />
+    <Compile Include="VerifyInfo.cs" />
+    <EmbeddedResource Include="Controls\VideoControl\AxDZVideoControl.resx">
+      <DependentUpon>AxDZVideoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Video\VideoSdkHelper\RealVideoPlayerWin.resx">
+      <DependentUpon>RealVideoPlayerWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Video\VideoSdkHelper\ViedeoPlayerWin.resx">
+      <DependentUpon>ViedeoPlayerWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\GmapControl\Images\frame.png" />
+    <Resource Include="Controls\GmapControl\Images\red-dot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\GmapControl\Markers\CustomMarker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PageControl\PageToolBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PictureControls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PictureIndicateControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TreeControl\TreeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Video\RealVideoPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Video\VideoPlayer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\WaterMarkPrint\WaterMarkPrintCTL.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\TreeControl\Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\TreeControl\Images\channelLeftCameraNotlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\PageControl\Images\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\PageControl\Images\forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\Video\Images\noVideoBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\Video\Images\下载.png" />
+    <Resource Include="Controls\Video\Images\播放 %281%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

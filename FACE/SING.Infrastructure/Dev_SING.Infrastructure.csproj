@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC55DD33-7901-48E3-B094-BA6D68C323AA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SING.Infrastructure</RootNamespace>
+    <AssemblyName>SING.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ExternalFrameworks">
+      <HintPath>..\Lib\ExternalFrameworks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\Lib\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity">
+      <HintPath>..\Lib\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions">
+      <HintPath>..\Lib\Microsoft.Practices.Prism.MefExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="Sofa.Commons">
+      <HintPath>..\Lib\Sofa.Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="Sofa.Component">
+      <HintPath>..\Lib\Sofa.Component.dll</HintPath>
+    </Reference>
+    <Reference Include="Sofa.Container">
+      <HintPath>..\Lib\Sofa.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Sofa.Themes">
+      <HintPath>..\Lib\Sofa.Themes.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition.Codeplex">
+      <HintPath>..\Lib\System.ComponentModel.Composition.Codeplex.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Reflection.Context">
+      <HintPath>..\Lib\System.Reflection.Context.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Docking, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.EntityFramework, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFToolkit">
+      <HintPath>..\Lib\WPFToolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behaviors\AutoPopulateExportedViewsBehavior.cs" />
+    <Compile Include="Behaviors\DynamicGridViewColumnsBehaviour.cs" />
+    <Compile Include="Behaviors\EditableComboBox.cs" />
+    <Compile Include="Behaviors\GridViewColumnCellTemplateSelector.cs" />
+    <Compile Include="Behaviors\IViewRegionRegistration.cs" />
+    <Compile Include="Behaviors\ViewExportAttribute.cs" />
+    <Compile Include="BusyAnimation.cs" />
+    <Compile Include="Converter\AskStatusConverter.cs" />
+    <Compile Include="Converter\BooleanOrConverter.cs" />
+    <Compile Include="Converter\ColorConverter.cs" />
+    <Compile Include="Converter\DateConverter.cs" />
+    <Compile Include="Converter\DefaultValueConverter.cs" />
+    <Compile Include="Converter\DirectConverter.cs" />
+    <Compile Include="Converter\ImageConverter.cs" />
+    <Compile Include="Converter\PubStatusConverter.cs" />
+    <Compile Include="Converter\ScoreConverter.cs" />
+    <Compile Include="Converter\ResetConverter.cs" />
+    <Compile Include="Converter\SstConverter.cs" />
+    <Compile Include="Converter\StringformatConverter.cs" />
+    <Compile Include="Converter\TestBindingConverter.cs" />
+    <Compile Include="Converter\FotConverter.cs" />
+    <Compile Include="Converter\VideoParamsConvert.cs" />
+    <Compile Include="Converter\VisibilityConverter.cs" />
+    <Compile Include="DEncrypt\BaseEncrypt.cs" />
+    <Compile Include="DEncrypt\DESEncrypt.cs" />
+    <Compile Include="DEncrypt\Encrypt.cs" />
+    <Compile Include="DEncrypt\HashEncode.cs" />
+    <Compile Include="DEncrypt\Md5Encrypt.cs" />
+    <Compile Include="DEncrypt\RSACryption.cs" />
+    <Compile Include="DEncrypt\TripleDESEncrypt.cs" />
+    <Compile Include="ElementHelper.cs" />
+    <Compile Include="Enums\AskStatusEnum.cs" />
+    <Compile Include="Enums\CmpMethodTypeEnum.cs" />
+    <Compile Include="Enums\ImportantTypeEnum.cs" />
+    <Compile Include="Enums\OperationTypeEnum.cs" />
+    <Compile Include="Enums\PubStatusEnum.cs" />
+    <Compile Include="Enums\TaskActionEnum.cs" />
+    <Compile Include="Enums\TaskPlanTypeEnum.cs" />
+    <Compile Include="Enums\TaskTimeSpanTypeEnum.cs" />
+    <Compile Include="Enums\TaskTypeEnum.cs" />
+    <Compile Include="Enums\VideoDirectEnum.cs" />
+    <Compile Include="Events\CallForDocumentEvent.cs" />
+    <Compile Include="Events\CallForDocumentParameters.cs" />
+    <Compile Include="Events\ClosingApplicationEvent.cs" />
+    <Compile Include="Events\ModuleInteractionEvent.cs" />
+    <Compile Include="Events\ModuleSyncEvent.cs" />
+    <Compile Include="Events\ModuleSyncParameters.cs" />
+    <Compile Include="Helper\CloneHelpers.cs" />
+    <Compile Include="Helper\ImageHelper.cs" />
+    <Compile Include="Helper\PredicateBuilder.cs" />
+    <Compile Include="Helper\ResKeys.cs" />
+    <Compile Include="Helper\ResHelper.cs" />
+    <Compile Include="Helper\SaveImage.cs" />
+    <Compile Include="Helper\TimeHelper.cs" />
+    <Compile Include="Helper\Tools.cs" />
+    <Compile Include="Models\IChecked.cs" />
+    <Compile Include="Models\ModelBase.cs" />
+    <Compile Include="Models\OperationInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Regexs\RegexHelper.cs" />
+    <Compile Include="Regexs\RegexString.cs" />
+    <Compile Include="RegionNames.cs" />
+    <Compile Include="RelayCommand.cs" />
+    <Compile Include="SerializedObjects.cs" />
+    <Compile Include="UIHelper.cs" />
+    <Compile Include="Validation\ChineseValidation.cs" />
+    <Compile Include="Validation\EnglishValidation.cs" />
+    <Compile Include="Validation\ValidationHelper.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SING.Data\Dev_SING.Data.csproj">
+      <Project>{35a1c45e-f5f7-4ee7-8681-3228648eb93b}</Project>
+      <Name>Dev_SING.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SING.Resource\Dev_SING.Resource.csproj">
+      <Project>{40122706-5a01-4307-ba59-b47d489038dd}</Project>
+      <Name>Dev_SING.Resource</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Services\" />
+    <Folder Include="Template\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

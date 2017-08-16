@@ -1,0 +1,36 @@
+2017-07-14-16-27-07-025  LNOTSET  no   (.\NetService.cpp 135) 操作系统为_WIN32 
+
+2017-07-14-16-27-07-028  LNOTSET  no   (.\ThreadIOCP.cpp 58)  完成端口开始接收数据 
+
+2017-07-14-16-27-07-028  LNOTSET  no   (.\ThreadIOCP.cpp 58)  完成端口开始接收数据 
+
+2017-07-14-16-27-07-047  LNOTSET  no   (.\ThreadPoolModule.cpp 397)  增加线程条数 2
+ 
+2017-07-14-16-27-07-047  LNOTSET  no   (.\CommunicationManager.cpp 774) 通知上层新连接到达线程开始运行
+
+2017-07-14-16-27-07-054  LNOTSET  no   (.\NetService.cpp 611) 通道0812FD60创建成功, new socket 3408, szRemoteIP:192.168.1.47, 		uiRemotePort:10002, szLocalIP:192.168.1.47, uiLocalPort:25308
+ 
+2017-07-14-16-27-40-490  LNOTSET  no   (.\SocketChanel.cpp 304) 通道0812FD60被请求关闭, localport=25308, RemotePort=10002 
+
+2017-07-14-16-27-40-490  LNOTSET  no   (.\ThreadIOCP.cpp 297)  完成端口不使用该通道0812FD60 FALSE == bRet 
+
+2017-07-14-16-27-40-490  LNOTSET  no   (.\ThreadIOCP.cpp 311) 完成端口收到退出消息
+
+2017-07-14-16-27-40-490  LNOTSET  no   (.\ThreadPoolModule.cpp 551) 通道状态线程退出 16:27:40 
+
+2017-07-14-16-27-40-490  LNOTSET  no   (.\ThreadPoolModule.cpp 538) 完成端口线程退出 16:27:40 
+
+2017-07-14-16-27-40-490  LNOTSET  no   (.\ThreadIOCP.cpp 311) 完成端口收到退出消息
+
+2017-07-14-16-27-40-490  LNOTSET  no   (.\ThreadPoolModule.cpp 538) 完成端口线程退出 16:27:40 
+
+2017-07-14-16-27-40-511  LNOTSET  no   (.\ThreadPoolModule.cpp 190) 网络库未执行任务数0 
+
+2017-07-14-16-27-40-511  LNOTSET  no   (.\ThreadPoolModule.cpp 559) 通知上层新连接到达线程退出 16:27:40 
+
+2017-07-14-16-27-40-511  LNOTSET  no   (.\ThreadPoolModule.cpp 202) 网络库线程池开始退出  16:27:40 
+
+2017-07-14-16-27-40-574  LNOTSET  no   (.\ThreadPoolModule.cpp 219) 网络库线程池退出耗时 62 毫秒
+
+2017-07-14-16-27-40-574  LNOTSET  no   (.\NetService.cpp 728) 网络库退出耗时 94 毫秒
+

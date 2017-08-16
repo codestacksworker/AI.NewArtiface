@@ -1,0 +1,285 @@
+﻿<UserControl x:Class="FACE_TemplateManagement.Views.EditFotInfoView" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FACE_TemplateManagement.Views"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:Controls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+             mc:Ignorable="d" d:DesignHeight="400"  d:DesignWidth="1000">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/FACE_TemplateManagement;component/StyleResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Margin="5,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <!--<RowDefinition/>-->
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Margin="2" Text="姓    名：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding CurrentFotEdit.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Margin="2,8,0,8"/>
+
+                <TextBlock Grid.Row="0" Grid.Column="3" Margin="2" Text="性    别：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Controls:RadComboBox Grid.Row="0" Grid.Column="4" ClearSelectionButtonVisibility="Visible" ClearSelectionButtonContent="重置选项" Margin="2,8,0,8" Text="{Binding CurrentFotEdit.Sex, Converter={StaticResource SexConvert}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <Controls:RadComboBoxItem Content="男"/>
+                    <Controls:RadComboBoxItem Content="女"/>
+                </Controls:RadComboBox>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Margin="2" Text="出生日期：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <telerik:RadDatePicker Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="2,8,0,8">
+                    <telerik:RadDatePicker.SelectedDate>
+                        <Binding Path=" CurrentFotEdit.BirthDate" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" Converter="{StaticResource DateFormattingConverter}"/>
+                    </telerik:RadDatePicker.SelectedDate>
+                </telerik:RadDatePicker>
+                
+                <TextBlock Grid.Row="1" Grid.Column="3" Margin="2" Text="敏感等级：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Controls:RadComboBox Grid.Row="1" Grid.Column="4" ClearSelectionButtonVisibility="Visible" ClearSelectionButtonContent="重置选项" Margin="2,8,0,8" Text="{Binding CurrentFotEdit.Sst, Converter={StaticResource SstConvert}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <Controls:RadComboBoxItem Content="高"/>
+                    <Controls:RadComboBoxItem Content="中"/>
+                    <Controls:RadComboBoxItem Content="低"/>
+                </Controls:RadComboBox>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="证件类型：" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Controls:RadComboBox Grid.Row="2" Grid.Column="1" ClearSelectionButtonVisibility="Visible" ClearSelectionButtonContent="重置选项" Margin="2,8,0,8" Text="{Binding CurrentFotEdit.IdType, Converter={StaticResource IdTypeConvert}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <Controls:RadComboBoxItem Content="身份证"/>
+                    <Controls:RadComboBoxItem Content="护照"/>
+                    <Controls:RadComboBoxItem Content="签证"/>
+                    <Controls:RadComboBoxItem Content="港澳通行证"/>
+                    <Controls:RadComboBoxItem Content="军人证"/>
+                    <Controls:RadComboBoxItem Content="户口本"/>
+                </Controls:RadComboBox>
+
+                <TextBlock  Grid.Row="2" Grid.Column="3" Margin="2" Text="证 件 号：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="2" Grid.Column="4" Text="{Binding CurrentFotEdit.IdNumb, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" CharacterCasing="Normal" HorizontalAlignment="Stretch" MaxLength="18" Margin="2,8,0,8" BorderThickness="1.3"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Margin="2" Text="民    族：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CurrentFotEdit.Ethnic, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Margin="2,8,0,8" BorderThickness="1.3"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="3" Text="地    址：" Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="3" Grid.Column="4" Text="{Binding CurrentFotEdit.Addr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Margin="2,8,0,8" BorderThickness="1.3"/>
+
+                <!--<TextBlock Grid.Row="4" Grid.Column="0" Margin="2" Text="标    签：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Margin="2,2,0,0" Grid.ColumnSpan="4"  HorizontalAlignment="Stretch" Text="{Binding CurrentFotEdit.Tag, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"  Height="40" BorderThickness="1.3"/>-->
+
+                <TextBlock  Grid.Row="4" Grid.Column="0" Margin="2" Text="备    注：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="4" Grid.Column="1" Margin="2,2,0,0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" Text="{Binding CurrentFotEdit.Remarks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"  Height="40" BorderThickness="1.3"/>
+
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="模板1采集时间：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <telerik:RadDateTimePicker Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                        <telerik:RadDateTimePicker.SelectedValue>
+                            <Binding Path="CurrentFotEdit.Temps[0].FtImgTime" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" Converter="{StaticResource DateTimeFormattingConverter}"/>
+                        </telerik:RadDateTimePicker.SelectedValue>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <i:InvokeCommandAction Command="{Binding CommandSetFtDeed}" CommandParameter="0"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </telerik:RadDateTimePicker>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="模板2采集时间：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <telerik:RadDateTimePicker Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                        <telerik:RadDateTimePicker.SelectedValue>
+                            <Binding Path="CurrentFotEdit.Temps[1].FtImgTime" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" Converter="{StaticResource DateTimeFormattingConverter}"/>
+                        </telerik:RadDateTimePicker.SelectedValue>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <i:InvokeCommandAction Command="{Binding CommandSetFtDeed}" CommandParameter="1"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </telerik:RadDateTimePicker>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="模板3采集时间：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <telerik:RadDateTimePicker Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                        <telerik:RadDateTimePicker.SelectedValue>
+                            <Binding Path="CurrentFotEdit.Temps[2].FtImgTime" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" Converter="{StaticResource DateTimeFormattingConverter}"/>
+                        </telerik:RadDateTimePicker.SelectedValue>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <i:InvokeCommandAction Command="{Binding CommandSetFtDeed}" CommandParameter="2"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </telerik:RadDateTimePicker>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="模板4采集时间：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <telerik:RadDateTimePicker Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                        <telerik:RadDateTimePicker.SelectedValue>
+                            <Binding Path="CurrentFotEdit.Temps[3].FtImgTime" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" Converter="{StaticResource DateTimeFormattingConverter}"/>
+                        </telerik:RadDateTimePicker.SelectedValue>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <i:InvokeCommandAction Command="{Binding CommandSetFtDeed}" CommandParameter="3"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </telerik:RadDateTimePicker>
+                    
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="模板5采集时间：" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <telerik:RadDateTimePicker Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                        <telerik:RadDateTimePicker.SelectedValue>
+                            <Binding Path="CurrentFotEdit.Temps[4].FtImgTime" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" Converter="{StaticResource DateTimeFormattingConverter}"/>
+                        </telerik:RadDateTimePicker.SelectedValue>
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <i:InvokeCommandAction Command="{Binding CommandSetFtDeed}" CommandParameter="4"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </telerik:RadDateTimePicker>
+                </Grid>
+               
+                
+                <Grid Grid.Column="1" Margin="10,-10,20,0" Height="155" Width="155" >
+                    <Button x:Name="btnPicMain"  Width="145" Height="145" BorderThickness="0"  Background="Transparent">
+                        <Image Source="{Binding CurrentFotEdit.Temp.FtImage, Converter={StaticResource BinaryImageConverter}}"/>
+                    </Button>
+
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0,5,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <telerik:RadButton Margin="2" Background="Transparent">
+                    <telerik:RadContextMenu.ContextMenu>
+                        <telerik:RadContextMenu>
+                            <telerik:RadMenuItem Header="设为主模板" Command="{Binding CommandSetMainFt}" CommandParameter="0"/>
+                            <telerik:RadMenuItem Header="移除模板" Command="{Binding CommandDeleteFt}" CommandParameter="0"/>
+                        </telerik:RadContextMenu>
+                    </telerik:RadContextMenu.ContextMenu>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding CommandCreateFt}" CommandParameter="0"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Image Source="{Binding CurrentFotEdit.Temps, ConverterParameter=0, Converter={StaticResource FtIndexBinaryImgConverter}}"/>
+
+                  
+                    
+                </telerik:RadButton>
+            </Grid>
+            <Grid Grid.Column="1">
+                <telerik:RadButton Margin="2" Background="Transparent">
+                    <telerik:RadContextMenu.ContextMenu>
+                        <telerik:RadContextMenu>
+                            <telerik:RadMenuItem Header="设为主模板" Command="{Binding CommandSetMainFt}" CommandParameter="1"/>
+                            <telerik:RadMenuItem Header="移除模板" Command="{Binding CommandDeleteFt}" CommandParameter="1"/>
+                        </telerik:RadContextMenu>
+                    </telerik:RadContextMenu.ContextMenu>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding CommandCreateFt}" CommandParameter="1"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Image Source="{Binding CurrentFotEdit.Temps, ConverterParameter=1, Converter={StaticResource FtIndexBinaryImgConverter}}"/>
+                   
+                </telerik:RadButton>
+            </Grid>
+            <Grid Grid.Column="2">
+                <telerik:RadButton Background="Transparent" Margin="2">
+                    <telerik:RadContextMenu.ContextMenu>
+                        <telerik:RadContextMenu>
+                            <telerik:RadMenuItem Header="设为主模板" Command="{Binding CommandSetMainFt}" CommandParameter="2"/>
+                            <telerik:RadMenuItem Header="移除模板" Command="{Binding CommandDeleteFt}" CommandParameter="2"/>
+                        </telerik:RadContextMenu>
+                    </telerik:RadContextMenu.ContextMenu>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding CommandCreateFt}" CommandParameter="2"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Image Source="{Binding CurrentFotEdit.Temps, ConverterParameter=2, Converter={StaticResource FtIndexBinaryImgConverter}}"/>
+                   
+                </telerik:RadButton>
+            </Grid>
+            <Grid Grid.Column="3">
+                <telerik:RadButton Background="Transparent" Margin="2">
+                    <telerik:RadContextMenu.ContextMenu>
+                        <telerik:RadContextMenu>
+                            <telerik:RadMenuItem Header="设为主模板" Command="{Binding CommandSetMainFt}" CommandParameter="3"/>
+                            <telerik:RadMenuItem Header="移除模板" Command="{Binding CommandDeleteFt}" CommandParameter="3"/>
+                        </telerik:RadContextMenu>
+                    </telerik:RadContextMenu.ContextMenu>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding CommandCreateFt}" CommandParameter="3"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Image Source="{Binding CurrentFotEdit.Temps, ConverterParameter=3, Converter={StaticResource FtIndexBinaryImgConverter}}"/>
+                 
+                </telerik:RadButton>
+            </Grid>
+            <Grid Grid.Column="4">
+                <telerik:RadButton Background="Transparent" Margin="2">
+                    <telerik:RadContextMenu.ContextMenu>
+                        <telerik:RadContextMenu>
+                            <telerik:RadMenuItem Header="设为主模板" Command="{Binding CommandSetMainFt}" CommandParameter="4"/>
+                            <telerik:RadMenuItem Header="移除模板" Command="{Binding CommandDeleteFt}" CommandParameter="4"/>
+                        </telerik:RadContextMenu>
+                    </telerik:RadContextMenu.ContextMenu>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding CommandCreateFt}" CommandParameter="4"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Image Source="{Binding CurrentFotEdit.Temps, ConverterParameter=4, Converter={StaticResource FtIndexBinaryImgConverter}}"/>
+                   
+                </telerik:RadButton>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

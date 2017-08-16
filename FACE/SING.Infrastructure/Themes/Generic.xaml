@@ -1,0 +1,168 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:res="clr-namespace:SING.Resource;assembly=SING.Resource"
+    xmlns:converter="clr-namespace:SING.Infrastructure.Converter">
+
+    <res:ResourceWrapper  x:Key="Res" />
+
+    <converter:UcBackgroundConverter x:Key="UcBackgroundConvert"/>
+    <converter:TextboxBackgroudConverter x:Key="TextboxBackgroudConvert"/>
+    <converter:ForeColorConverter x:Key="ForeColorConvert"/>
+   
+
+    <!--<Style x:Key="{x:Type Grid}" TargetType="{x:Type Grid}">
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    </Style>-->
+
+   
+
+    <Style x:Key="BaseTextBox" TargetType="{x:Type TextBox}">
+
+        <Setter Property="FontSize" Value="14"/>
+
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+
+        <Setter Property="Background" Value="{Binding Converter={StaticResource TextboxBackgroudConvert}}" />
+
+        <Setter Property="VerticalAlignment" Value="Top" />
+
+        <Setter Property="HorizontalAlignment" Value="Left" />
+
+        <Setter Property="Foreground" Value="{Binding Converter={StaticResource ForeColorConvert}}" />
+
+        <Setter Property="BorderBrush" Value="#AABFD6" />
+
+        <Setter Property="BorderThickness" Value="1,1,1,1" />
+
+        <!--<Setter Property="CharacterCasing" Value="Upper" />-->
+    </Style>
+    <Style x:Key="{x:Type TextBox}" TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseTextBox}"/>
+
+    <Style x:Key="BaseTextBlock" TargetType="{x:Type TextBlock}">
+
+        <Setter Property="Foreground" Value="{Binding Converter={StaticResource ForeColorConvert}}" />
+
+        <Setter Property="VerticalAlignment" Value="Top" />
+
+        <Setter Property="HorizontalAlignment" Value="Left" />
+
+        <Setter Property="FontSize" Value="14"/>
+
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+    </Style>
+    <Style x:Key="{x:Type TextBlock}" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}"/>
+
+    <Style x:Key="BaseCheckBox" TargetType="{x:Type CheckBox}">
+         
+        <Setter Property="Foreground" Value="{Binding Converter={StaticResource ForeColorConvert}}" />
+         
+        <Setter Property="VerticalAlignment" Value="Top" />
+         
+        <Setter Property="HorizontalAlignment" Value="Left" />
+         
+        <Setter Property="Height" Value="23" />
+
+        <Setter Property="FontSize" Value="14"/>
+
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+    </Style>
+    <Style x:Key="{x:Type CheckBox}" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource BaseCheckBox}"/>
+
+    <Style x:Key="BaseRadComboBox" TargetType="{x:Type telerik:RadComboBox}">
+
+        <!--<Setter Property="Foreground" Value="{Binding Converter={StaticResource ForeColorConvert}}" />
+
+        <Setter Property="VerticalAlignment" Value="Top" />
+
+        <Setter Property="HorizontalAlignment" Value="Left" />
+
+        <Setter Property="Height" Value="23" />-->
+
+        <Setter Property="FontSize" Value="14"/>
+
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+    </Style>
+    <Style x:Key="{x:Type telerik:RadComboBox}" TargetType="{x:Type telerik:RadComboBox}" BasedOn="{StaticResource BaseRadComboBox}"/>
+
+    <Style x:Key="BaseLabel" TargetType="{x:Type Label}">
+
+        <Setter Property="FontSize" Value="14"/>
+
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+
+    </Style>
+    <Style x:Key="{x:Type Label}" TargetType="{x:Type Label}" BasedOn="{StaticResource BaseLabel}"/>
+
+    <Style x:Key="{x:Type TextElement}" TargetType="{x:Type TextElement}">
+
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <Style x:Key="BaseRadTreeView" TargetType="{x:Type telerik:RadTreeView}">
+        
+        <Setter Property="FontSize" Value="14"/>
+
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+    </Style>
+
+    <Style x:Key="{x:Type telerik:RadTreeView}" TargetType="{x:Type telerik:RadTreeView}" BasedOn="{StaticResource BaseRadTreeView}"/>
+
+    <!--<Style x:Key="BaseToggleButton" TargetType="{x:Type ToggleButton}">
+
+        <Setter Property="FontSize" Value="14"/>
+
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+    </Style>
+    <Style x:Key="{x:Type ToggleButton}" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource BaseToggleButton}"/>-->
+
+    <Style x:Key="BaseRadNumericUpDown" TargetType="{x:Type telerik:RadNumericUpDown}">
+        
+        <Setter Property="NumberDecimalDigits" Value="0"/>
+        
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+        
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        
+        <Setter Property="NumberDecimalDigits" Value="0" />
+    </Style>
+    <Style x:Key="{x:Type telerik:RadNumericUpDown}" TargetType="{x:Type telerik:RadNumericUpDown}" BasedOn="{StaticResource BaseRadNumericUpDown}"/>
+
+    <Style x:Key="BaseButton" TargetType="{x:Type Button}">
+        
+        <Setter Property="FontSize" Value="14"/>
+
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+    </Style>
+    <Style x:Key="{x:Type Button}" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseButton}"/>
+
+    <Style x:Key="BaseRadButton" TargetType="{x:Type telerik:RadButton}">
+
+        <Setter Property="FontSize" Value="14"/>
+
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+    </Style>
+    <Style x:Key="{x:Type telerik:RadButton}" TargetType="{x:Type telerik:RadButton}" BasedOn="{StaticResource BaseRadButton}"/>
+    
+    <Style x:Key="BaseRadTabItem" TargetType="{x:Type telerik:RadTabItem}">
+
+        <Setter Property="FontSize" Value="14"/>
+
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+    </Style>
+    <Style x:Key="{x:Type telerik:RadTabItem}" TargetType="{x:Type telerik:RadTabItem}" BasedOn="{StaticResource BaseRadTabItem}"/>
+
+    <Style x:Key="BaseRadDateTimePicker" TargetType="{x:Type telerik:RadDateTimePicker}">
+
+        <Setter Property="FontSize" Value="14"/>
+
+        <Setter Property="FontFamily" Value="微软雅黑"/>
+    </Style>
+    <Style x:Key="{x:Type telerik:RadDateTimePicker}" TargetType="{x:Type telerik:RadDateTimePicker}" BasedOn="{StaticResource BaseRadDateTimePicker}"/>
+</ResourceDictionary>

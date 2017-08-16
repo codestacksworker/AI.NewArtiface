@@ -1,0 +1,12 @@
+2017-07-14-16-38-40-521  LNOTSET  no   (.\NetService.cpp 135) 操作系统为_WIN32 
+
+2017-07-14-16-38-40-524  LNOTSET  no   (.\ThreadIOCP.cpp 58)  完成端口开始接收数据 
+
+2017-07-14-16-38-40-524  LNOTSET  no   (.\ThreadIOCP.cpp 58)  完成端口开始接收数据 
+
+2017-07-14-16-38-40-544  LNOTSET  no   (.\ThreadPoolModule.cpp 397)  增加线程条数 2
+ 
+2017-07-14-16-38-40-544  LNOTSET  no   (.\CommunicationManager.cpp 774) 通知上层新连接到达线程开始运行
+
+2017-07-14-16-38-40-550  LNOTSET  no   (.\NetService.cpp 611) 通道07C3FD70创建成功, new socket 3404, szRemoteIP:192.168.1.47, 		uiRemotePort:10002, szLocalIP:192.168.1.47, uiLocalPort:25815
+ 

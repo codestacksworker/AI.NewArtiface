@@ -1,0 +1,187 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FACE_MonitorTasks.Views"
+             xmlns:pageControl="clr-namespace:SING.Data.Controls.PageControl;assembly=SING.Data"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+            xmlns:ViewModels="clr-namespace:FACE_MonitorTasks.ViewModels" 
+            xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+            x:Class="FACE_MonitorTasks.Views.TaskView"
+             mc:Ignorable="d" 
+             d:DesignHeight="303.376" d:DesignWidth="1920">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/FACE_MonitorTasks;component/StyleResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <!--<UserControl.DataContext>
+        <ViewModels:ViewModel/>
+    </UserControl.DataContext>-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" d:LayoutOverrides="Height" Margin="2,5">
+
+            <telerik:RadButton Content="+新建任务" Width="80" Command="{Binding CommandAddTask}"/>
+
+            <telerik:RadButton Width="80" Margin="5,0,5,0"
+		                        HorizontalAlignment="Left"
+		                        Content="启动" IsEnabled="{Binding HasSelectedItems}"
+                                Command="{Binding CommandOpenItemsTask, Mode=OneWay}" CommandParameter="{Binding SelectedItems, ElementName=GridView}"/>
+            <telerik:RadButton Grid.Column="1"
+		                        Width="80"  Margin="0,0,5,0"
+		                        HorizontalAlignment="Left"
+		                        Content="关闭" IsEnabled="{Binding HasSelectedItems}"
+                                Command="{Binding CommandCloseItemsTask, Mode=OneWay}"  CommandParameter="{Binding SelectedItems, ElementName=GridView}"/>
+
+            <telerik:RadButton  Content="刷新" Width="80" 
+                                Command="{Binding CommandQueryTask}" 
+                                CommandParameter="{Binding ElementName=txtKeyWord,Path=Text}"/>
+
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" d:LayoutOverrides="Height" Margin="2,5">
+
+            <Grid Margin="5,0">
+                <telerik:RadWatermarkTextBox x:Name="txtKeyWord" Text="{Binding KeywordTask,Mode=TwoWay}" WatermarkContent="搜索任务名称" Width="300" Height="30" FontSize="10" />
+                <telerik:RadPathButton x:Name="btnSearch" Command="{Binding CommandQueryTask}" CommandParameter="{Binding ElementName=txtKeyWord,Path=Text}" PathGeometry="M8.4,1.9 C6.5,1.9 4.9,3.5 4.9,5.5 C4.9,7.4 6.5,9 8.4,9 C10.4,9 11.9,7.4 11.9,5.5 C11.9,3.5 10.4,1.9 8.4,1.9 z M8.4,0 C11.5,-8.7E-08 13.9,2.4 13.9,5.5 C13.9,8.5 11.5,11 8.4,11 C7.3,11 6.2,10.6 5.4,10.0 L5.3,10.0 L1.4,13.9 L0,12.5 L3.9,8.6 L3.9,8.5 C3.3,7.6 2.9,6.6 2.9,5.5 C2.9,2.4 5.4,-8.7E-08 8.4,0 z" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Panel.ZIndex="1000" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Center" Height="27" Padding="0,0,40,0"/>
+            </Grid>
+
+        </StackPanel>
+        <telerik:RadGridView x:Name="GridView" GroupRenderMode="Flat"
+								 ItemsSource="{Binding MonitorTaskList}"
+								 RowIndicatorVisibility="Collapsed"
+                                 CanUserFreezeColumns="False"
+								 AutoGenerateColumns="False"
+                                 SelectionMode="Multiple" SelectionUnit="FullRow"
+								 IsReadOnly="True" ValidatesOnDataErrors="None"
+								 ShowGroupPanel="False" Grid.Row="1" IsFilteringAllowed="False" VerticalGridLinesBrush="{x:Null}" MouseDoubleClick="GridView_MouseDoubleClick" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <!--<telerik:StyleManager.Theme>
+                <telerik:Office_BlackTheme></telerik:Office_BlackTheme>
+            </telerik:StyleManager.Theme>-->
+            <telerik:RadGridView.Columns>
+                <local:MyGridViewSelectColumn/>
+                <telerik:GridViewDataColumn Width="Auto" Header="序号"  DataMemberBinding="{Binding Index}" HeaderCellStyle="{StaticResource NoneSortableHeaderCellStyle}" IsSortable="False" TextAlignment="Center">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBox Text="{Binding RowNo}" Background="{x:Null}" BorderThickness="0" IsReadOnly="True"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+
+                <telerik:GridViewDataColumn Width="0.2*" Header="任务名称"  DataMemberBinding="{Binding Name}"   HeaderCellStyle="{StaticResource SortableHeaderCellStyle}">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <TextBox Text="{Binding Name}" TextWrapping="Wrap" Background="{x:Null}" BorderThickness="0" IsReadOnly="True"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Width="0.1*" Header="类型"  DataMemberBinding="{Binding TaskType, Converter={StaticResource TaskTypeConvert}}" HeaderCellStyle="{StaticResource SortableHeaderCellStyle}" TextAlignment="Center">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBox Text="{Binding Type, Converter={StaticResource TaskTypeConvert}}" Background="{x:Null}" BorderThickness="0" IsReadOnly="True"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn  Width="0.15*" Header="状态"  HeaderCellStyle="{StaticResource SortableHeaderCellStyle}" TextAlignment="Center">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentControl>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                    <Rectangle Margin="0,3,0,0" Height="32" Width="32" Fill="{Binding TaskStatus,Converter={StaticResource TaskStatusBrushConverter}}" VerticalAlignment="Center"/>
+                                    <TextBox  IsReadOnly="True" BorderThickness="0" Background="{x:Null}" Text="{Binding State,Converter={StaticResource TaskStatusConvert}}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </ContentControl>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+
+                <telerik:GridViewDataColumn Width="0.1*" Header="布控人"  DataMemberBinding="{Binding UserName}"    HeaderCellStyle="{StaticResource SortableHeaderCellStyle}" TextAlignment="Center">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBox Text="{Binding UserName}" Background="{x:Null}" BorderThickness="0" IsReadOnly="True"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+
+                <telerik:GridViewDataColumn Width="0.3*" Header="布控描述"  DataMemberBinding="{Binding Description}"  HeaderCellStyle="{StaticResource NoneSortableHeaderCellStyle}"   IsSortable="False" >
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <TextBox Text="{Binding Description}" TextWrapping="Wrap" Background="{x:Null}" BorderThickness="0" IsReadOnly="True"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Width="0.1*" Header="目标人数"  DataMemberBinding="{Binding TargetCount}"  HeaderCellStyle="{StaticResource NoneSortableHeaderCellStyle}"    IsSortable="False" TextAlignment="Center">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBox Text="{Binding ObjectCount}" Background="{x:Null}" BorderThickness="0" IsReadOnly="True"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Width="0.1*" Header="布控通道数"  DataMemberBinding="{Binding ChannelCount}"  HeaderCellStyle="{StaticResource NoneSortableHeaderCellStyle}"    IsSortable="False" TextAlignment="Center">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBox Text="{Binding ChannelCount}" Background="{x:Null}" BorderThickness="0" IsReadOnly="True"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Width="0.2*" Header="布控时段"  DataMemberBinding="{Binding TaskSpan}"  HeaderCellStyle="{StaticResource NoneSortableHeaderCellStyle}"    IsSortable="False" TextAlignment="Center">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBox Text="{Binding TaskSpan}" TextWrapping="Wrap" Background="{x:Null}" BorderThickness="0" IsReadOnly="True"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Width="0.15*" Header="创建时间"  DataMemberBinding="{Binding CreateDate, StringFormat=yyyy-MM-dd}"  HeaderCellStyle="{StaticResource SortableHeaderCellStyle}" TextAlignment="Center">
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBox Text="{Binding CreateTime, StringFormat=yyyy-MM-dd}" Background="{x:Null}" BorderThickness="0" IsReadOnly="True"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewColumn Width="0.15*" Header="操作"  CellTemplate="{StaticResource taskActionTemplate}"  HeaderCellStyle="{StaticResource NoneSortableHeaderCellStyle}"  IsSortable="False" TextAlignment="Center"/>
+            </telerik:RadGridView.Columns>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding CommandSelectedChanged}" CommandParameter="{Binding ElementName=GridView,Path=SelectedItems}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </telerik:RadGridView>
+        <StackPanel x:Name="spHttpError" Visibility="{Binding HasHttpError,Converter={StaticResource BoolToVisibilityConverter}}" Margin="0,45,0,0" Orientation="Vertical" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center" Text="加载数据失败，请检查您的网络并重试" Margin="5"/>
+            <Button  Content="刷新" Command="{Binding CommandQueryTask}" CommandParameter="{Binding ElementName=txtKeyWord,Path=Text}" Width="75" Margin="5"/>
+        </StackPanel>
+        <StackPanel Visibility="{Binding MonitorTaskList.Count,Converter={StaticResource IntToVisibilityReverseConverter}}" Margin="597.5,45,597.5,0" Orientation="Vertical" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" d:IsHidden="True">
+            <TextBlock Visibility="{Binding ElementName=spHttpError,Path=Visibility,Converter={StaticResource VisibilityReverseConverter}}" HorizontalAlignment="Center" Text="没有 '关键词' 相关的布控任务" Margin="5"/>
+            <Button  Visibility="{Binding ElementName=spHttpError,Path=Visibility,Converter={StaticResource VisibilityReverseConverter}}" Content="全部布控任务" Command="{Binding CommandRefreshTask}" Width="120" Margin="5"/>
+        </StackPanel>
+        <Border Grid.Row="2" VerticalAlignment="Center" Margin="5,5,5,0" >
+            <pageControl:PageToolBar DataSource="{Binding TaskPageCondition}" ChangePageCommand="{Binding}"/>
+        </Border>
+
+    </Grid>
+</UserControl>

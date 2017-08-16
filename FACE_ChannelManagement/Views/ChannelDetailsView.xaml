@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="FACE_ChannelManagement.Views.LocationTextControls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:gmapControl="clr-namespace:SING.Data.Controls.GmapControl;assembly=SING.Data"
+             xmlns:converter="clr-namespace:FACE_ChannelManagement.Converter"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/FACE_ChannelManagement;component/StyleResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock TextAlignment="Right" Margin="5,15" Grid.Row="0" Grid.Column="0" Text="通道名称：" />
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="5,15" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding Video.Channel.ChannelName,Mode=OneWay}" IsEnabled="False"/>
+
+        <TextBlock TextAlignment="Right" Margin="5,15" Grid.Row="0" Grid.Column="2" Text="重要等级：" />
+        <telerik:RadComboBox Grid.Row="0" Grid.Column="3" Margin="5,15" SelectedValuePath="Value" DisplayMemberPath="Name" IsEnabled="False" ItemsSource="{Binding Importants}">
+            <telerik:RadComboBox.SelectedValue>
+                <Binding Path="Video.Channel.Important" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"/>
+            </telerik:RadComboBox.SelectedValue>
+        </telerik:RadComboBox>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="5,15" Text="通 道 号：" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="5,15" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding Video.Channel.ChannelNo,Mode=TwoWay}" IsEnabled="False"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="2" Margin="5,15" x:Name="LbCapServerAdd" Text="通道方向：" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <telerik:RadComboBox  Grid.Row="1" Grid.Column="3" Margin="5,15" HorizontalAlignment="Stretch" VerticalAlignment="Center" IsEnabled="False" SelectedValuePath="Value" DisplayMemberPath="Name" ItemsSource="{Binding Directs}">
+            <telerik:RadComboBox.SelectedValue>
+                <Binding Path="Video.Channel.ChannelDirect" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"/>
+            </telerik:RadComboBox.SelectedValue>
+        </telerik:RadComboBox>
+
+        <TextBlock TextAlignment="Right" Margin="5,15" Grid.Row="2" Grid.Column="0" Text="视频地址：" />
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="5,15" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding Video.Channel.ChannelAddr,Mode=OneWay}" IsEnabled="False"/>
+        
+        <TextBlock TextAlignment="Right" Margin="5,15" Grid.Row="3" Grid.Column="0" Text="视频端口：" />
+        <TextBox Grid.Row="3" Grid.Column="1" Margin="5,15" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding Video.Channel.ChannelPort,Mode=OneWay}" IsEnabled="False"/>
+
+        <TextBlock TextAlignment="Right" Margin="5,15" Grid.Row="4" Grid.Column="0" Text="视频帐号：" />
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="5,15" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding Video.Channel.ChannelUid,Mode=OneWay}" IsEnabled="False"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Margin="5,15" Text="质量系数：" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Margin="5,15" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding Video.Channel.ChannelThreshold,Mode=TwoWay}" IsEnabled="False"/>
+
+        <TextBlock Grid.Row="6" Grid.Column="0" Margin="5,15" Text="通道位置：" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="6" Grid.Column="1" Margin="5,15" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding Video.Channel.ChannelArea,Mode=TwoWay}" IsEnabled="False"/>
+
+        <Grid Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="5" Margin="5,0">
+            <Border BorderThickness="2" BorderBrush="#1E1E1E">
+                <gmapControl:Map MaxZoom="24" MinZoom="8" Zoom="12" CurrentPosition="{Binding CurrentMapPosition,Mode=TwoWay}" IsSetPositionMarker="True"/>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

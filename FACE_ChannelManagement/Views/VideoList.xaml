@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="FACE_ChannelManagement.UserControls.VideoList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="clr-namespace:FACE_ChannelManagement.Controls"
+             xmlns:converter="clr-namespace:FACE_ChannelManagement.Converter"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:converter1="clr-namespace:SING.Infrastructure.Converter;assembly=SING.Infrastructure"
+             mc:Ignorable="d" BorderThickness="1" Margin="2">
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/FACE_ChannelManagement;component/StyleResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <converter1:DirectConverter x:Key="DirectConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <telerik:RadListBox Name="cameraList" SelectionMode="Single" ItemsSource="{Binding VideoList,Mode=TwoWay}" SelectedItem="{Binding Video,Mode=TwoWay}">
+            <telerik:RadListBox.Template>
+                <ControlTemplate>
+                    <Border BorderThickness="2">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" >
+                            <ItemsPresenter />
+                        </ScrollViewer>
+                    </Border>
+                </ControlTemplate>
+            </telerik:RadListBox.Template>
+            <telerik:RadListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel IsItemsHost="True"/>
+                </ItemsPanelTemplate>
+            </telerik:RadListBox.ItemsPanel>
+            <telerik:RadListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="0" Margin="5">
+                        <Border.BorderBrush>
+                            <SolidColorBrush Color="Black" Opacity="0.5"/>
+                        </Border.BorderBrush>
+                        <Grid>
+                            <controls:DataItem Width="180" Height="200" ChannelName="{Binding Channel.ChannelName,Mode=TwoWay}" RegionName="{Binding Parent.Region.RegionName,Mode=TwoWay}" Uuid="{Binding Channel.Uuid,Mode=TwoWay}"
+                                               IsConnected="{Binding Channel.IsConnected,Mode=TwoWay}" ChannelDirect="{Binding Channel.ChannelDirect,Converter={StaticResource DirectConverter},Mode=TwoWay}"
+                                               VideoViewExit="{Binding Path=DataContext.VideoViewExitCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=telerik:RadListBox}}"
+                                                UpdateConnected="{Binding Path=DataContext.UpdateConnectedCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=telerik:RadListBox}}"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </telerik:RadListBox.ItemTemplate>
+
+        </telerik:RadListBox>
+    </Grid>
+</UserControl>

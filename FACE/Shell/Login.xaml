@@ -1,0 +1,217 @@
+﻿<Window x:Class="Shell.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:shell="clr-namespace:Shell"
+        mc:Ignorable="d"
+         Title="登录" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent"
+        AllowsTransparency="True" ResizeMode="NoResize" Height="400" Width="700">
+
+    <Window.Resources>
+
+        <Style x:Key="TextBoxUserStyle" BasedOn="{x:Null}" TargetType="{x:Type TextBox}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Width" Value="225"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="OuterBorder" BorderBrush="#5AFFFFFF" BorderThickness="1,1,1,1" CornerRadius="4,4,4,4">
+                            <Border x:Name="InnerBorder" Background="#FFFFFFFF" BorderBrush="#33000000" BorderThickness="1,1,1,1" CornerRadius="3,3,3,3">
+                                <ScrollViewer SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" x:Name="PART_ContentHost"/>
+                            </Border>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="GlassButton" TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="42" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="ButtonBorder" CornerRadius="5" BorderThickness="1" Background="#FF327EB1" BorderBrush="#FF3A7AA4" RenderTransformOrigin="0.5,0.5" Margin="1">
+                            <Grid x:Name="grid" Margin="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="1.7*"/>
+                                </Grid.RowDefinitions>
+                                <Border Grid.Row="0" CornerRadius="6" Margin="0,2.072,0,2.001" Height="Auto" VerticalAlignment="Stretch" Grid.RowSpan="2" >
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                            <GradientStop Color="#08FFFFFF" Offset="0"/>
+                                            <GradientStop Color="#88FFFFFF" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                                <ContentPresenter x:Name="ButtonContentPresenter" VerticalAlignment="Stretch" Grid.RowSpan="2" HorizontalAlignment="Stretch" Margin="37,2.874,-3,4.874" d:LayoutOverrides="Height"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" TargetName="ButtonBorder" Value="#FF8A9FA4"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="RenderTransform" TargetName="ButtonBorder">
+                                    <Setter.Value>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                                        </TransformGroup>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="grid" Value="#FF4C5661"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="PasswordBoxVistaStyle" BasedOn="{x:Null}" TargetType="{x:Type PasswordBox}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Width" Value="225"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border x:Name="OuterBorder" BorderBrush="#5AFFFFFF" BorderThickness="1,1,1,1" CornerRadius="4,4,4,4">
+                            <Border x:Name="InnerBorder" Background="#FFFFFFFF" BorderBrush="#33000000" BorderThickness="1,1,1,1" CornerRadius="3,3,3,3">
+                                <Grid>
+                                    <Label x:Name="lblPwd" Content="Password" FontSize="11" VerticalAlignment="Center" Margin="2,0,0,0" FontFamily="Verdana" Foreground="#828385" Padding="0"/>
+                                    <ScrollViewer SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" x:Name="PART_ContentHost"/>
+                                </Grid>
+                            </Border>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Visibility" TargetName="lblPwd" Value="Hidden"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static shell:Login.SkipEnterCommand}" Executed="OnExecuteSkipEnter" CanExecute="CanExecuteSkipEnter" />
+    </Window.CommandBindings>
+
+    <Grid >
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <!--<GradientStop Color="#FFDAE7EC" Offset="0.022"/>
+                <GradientStop Color="#FFB9DCF2" Offset="0.913"/>
+                <GradientStop Color="#FFDCEFF9" Offset="0.378"/>
+                <GradientStop Color="#FFB9D5E5" Offset="0.665"/>-->
+
+                <GradientStop Color="#C6C6D0" Offset="0.022"/>
+                <GradientStop Color="#C0C0CA" Offset="0.913"/>
+                <GradientStop Color="#B9B9C3" Offset="0.378"/>
+                <GradientStop Color="#B3B3BD" Offset="0.665"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="0"/>
+
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#FFE6F5FB" HorizontalAlignment="Left" Margin="293,139,0,57" Grid.Row="3" Stroke="#FFF5EEEE" StrokeThickness="1.33319" StrokeLineJoin="Round" Width="1" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+
+        <TextBlock Height="45" Margin="0,40,0,0" Grid.Row="3" TextWrapping="Wrap" Text="深醒科技动态人脸识别实时预警系统" VerticalAlignment="Top" FontSize="35.333" FontWeight="Bold" FontFamily="微软雅黑" RenderTransformOrigin="0.5,0.5" Foreground="#FFFDFAFA" OpacityMask="Black" HorizontalAlignment="Center">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1.07" ScaleX="1.02"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock Height="45" Margin="0,40,0,0" Grid.Row="3" TextWrapping="Wrap" Text="深醒科技动态人脸识别实时预警系统" Foreground="#23496F" VerticalAlignment="Top" FontSize="35.333" FontWeight="Bold" FontFamily="微软雅黑" HorizontalAlignment="Center">
+            <TextBlock.Effect>
+                <DropShadowEffect Opacity="0.4"/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <ProgressBar x:Name="progressReport"  Height="30.313" Margin="3,0,0,2" Grid.Row="3" VerticalAlignment="Bottom" Visibility="Hidden"/>
+        <StackPanel Margin="315,110,0,0" Orientation="Vertical" Grid.RowSpan="4">
+            <TextBlock Foreground="Red" x:Name="errText" d:LayoutOverrides="LeftPosition, RightPosition" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="60,5,0,5"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+
+
+                <TextBlock TextWrapping="Wrap" Text="服务地址:" Width="55" TextAlignment="Right" VerticalAlignment="Center"/>
+
+
+                <TextBox Style="{StaticResource TextBoxUserStyle}"  HorizontalAlignment="Stretch" Margin="5,0" Width="200" Height="26"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+
+
+                <TextBlock TextWrapping="Wrap" Text="端口号:" Width="55" TextAlignment="Right" VerticalAlignment="Center"/>
+
+
+                <TextBox Style="{StaticResource TextBoxUserStyle}"  HorizontalAlignment="Stretch" Margin="5,0" Width="200" Height="26"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+
+
+                <TextBlock TextWrapping="Wrap" Text="账号:" Width="55" TextAlignment="Right" VerticalAlignment="Center"/>
+
+
+                <TextBox Style="{StaticResource TextBoxUserStyle}"  x:Name="txtUserName" HorizontalAlignment="Stretch" Margin="5,0" Width="200" Height="26"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <TextBlock TextWrapping="Wrap" Text="密码:" Width="55" TextAlignment="Right" VerticalAlignment="Center"/>
+                <PasswordBox Style="{StaticResource PasswordBoxVistaStyle}" x:Name="txtPassword" HorizontalAlignment="Stretch" Margin="5,0" Width="200" Height="26"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="80,15,0,15">
+                <Button x:Name="btnLogin" Style="{DynamicResource GlassButton}"  AutomationProperties.AutomationId="login" IsDefault="True" Content="登录[Enter]" Height="36"  Click="btnLogin_Click" VerticalAlignment="Center" FontSize="16" Foreground="#FFFBF9F9" RenderTransformOrigin="0.5,0.5" BorderThickness="3" Width="160" HorizontalAlignment="Center">
+                    <Button.Effect>
+                        <DropShadowEffect Color="Gray" Opacity=".50" ShadowDepth="8" BlurRadius="18" />
+                    </Button.Effect>
+                </Button>
+                <Button x:Name="btnCancel" Style="{DynamicResource GlassButton}" Margin="0,0,-132.25,100.83" Height="30" IsCancel="True" Content="取消" Click="Cancel" VerticalAlignment="Bottom" FontSize="16" Background="#FF2C81BA" Foreground="#FFFBF9F9" HorizontalAlignment="Right" Width="110" Visibility="Collapsed">
+                    <Button.Effect>
+                        <DropShadowEffect Color="Gray" Opacity=".50" ShadowDepth="8" />
+                    </Button.Effect>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

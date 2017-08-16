@@ -1,0 +1,153 @@
+﻿<telerik:RadWindow
+                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                         xmlns:local="clr-namespace:FACE_MonitorTasks.Views"
+                         xmlns:ViewModels="clr-namespace:FACE_MonitorTasks.ViewModels" 
+                         x:Class="FACE_MonitorTasks.Views.EditStrategyForm"
+                         WindowStartupLocation="CenterScreen" 
+                         Header="新建比对策略" 
+                         SizeToContent="True"
+                         mc:Ignorable="d" ResizeMode="NoResize" Background="{x:Null}">
+    <telerik:RadWindow.Resources>
+
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/FACE_MonitorTasks;component/StyleResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </telerik:RadWindow.Resources>
+
+
+    <Border Width="760" Padding="15,15,15,0" Background="#FF555555" >
+
+
+        <Grid x:Name="grid" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <StackPanel IsEnabled="{Binding IsInEditMode}">
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <TextBlock Text="策略类型:" VerticalAlignment="Center" Width="70"/>
+                    <telerik:RadComboBox VerticalAlignment="Center" SelectedIndex="{Binding EditedStrategy.TaskType, Mode=TwoWay}" ItemsSource="{Binding TaskType}"  HorizontalAlignment="Left" Width="350" Height="26" Padding="4,0" />
+                    <TextBlock x:Name="tipTaskType" Visibility="{Binding IsInEditMode, Converter={StaticResource BoolToVisibilityConverter}}" Text="*" VerticalAlignment="Center"  Margin="3,0" Foreground="{DynamicResource ErrorBrush}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <TextBlock Text="策略名称:" VerticalAlignment="Center" Width="70"/>
+                    <TextBox Text="{Binding EditedStrategy.StrategyName}" VerticalAlignment="Center" Width="350" Height="26" Padding="0" />
+                    <TextBlock  Visibility="{Binding Visibility, ElementName=tipTaskType}"  Text="*" VerticalAlignment="Center"  Margin="3,0" Foreground="{DynamicResource ErrorBrush}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <TextBlock Text="策略描述:" Margin="0,5,0,0" Width="70"/>
+                    <TextBox Width="350" Height="55" Text="{Binding EditedStrategy.Description}"  TextWrapping="Wrap" Padding="0" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="1" Height="150" IsEnabled="{Binding IsInEditMode}" Margin="0,20,0,0">
+                <Grid d:LayoutOverrides="LeftPosition, RightPosition">
+                    <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" d:LayoutOverrides="Height">
+                        <TextBlock  Text="比对方法" VerticalAlignment="Center" d:LayoutOverrides="Width, LeftPosition, RightPosition" FontSize="16" />
+                        <TextBlock  Visibility="{Binding Visibility, ElementName=tipTaskType}"  Text="*" VerticalAlignment="Center"  Margin="3,0" FontSize="16" Foreground="{DynamicResource ErrorBrush}"/>
+                    </StackPanel>
+                    <telerik:RadButton Command="{Binding CommandOpenMethodForm}"  Content="选择比对方法" HorizontalAlignment="Right" Height="26" Padding="0" Width="120" BorderThickness="1" />
+                </Grid>
+                <Border Height="128" BorderBrush="Gray" BorderThickness="0,1,0,0">
+                    <Grid>
+                        <telerik:RadListBox Margin="0,3" BorderThickness="0"
+                                            ItemsSource="{Binding CmpMethodList}" 
+                                            ItemTemplate="{StaticResource editMethodTemplate}" HorizontalContentAlignment="Stretch" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" ItemsPanel="{DynamicResource ItemsPanelTemplate1}">
+                            <telerik:RadListBox.Resources>
+                                <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+                                    <VirtualizingStackPanel IsItemsHost="True"/>
+                                </ItemsPanelTemplate>
+                            </telerik:RadListBox.Resources>
+                        </telerik:RadListBox>
+                    </Grid>
+
+                </Border>
+
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="2">
+                <Grid>
+                    <TextBlock Visibility="Hidden"/>
+                    <TextBlock Visibility="{Binding Visibility, ElementName=borderTaskList}" HorizontalAlignment="Left" TextWrapping="Wrap" Text="关联布控任务" VerticalAlignment="Center" Margin="0,3" FontSize="16" />
+
+                </Grid>
+
+                <Border x:Name="borderTaskList" Height="220" BorderBrush="Gray" BorderThickness="0,1,0,0">
+                    <telerik:RadGridView ItemsSource="{Binding EditedStrategy.TaskList}"  ValidatesOnDataErrors="None"
+                        Margin="0" ShowColumnSortIndexes="True" CanUserFreezeColumns="False" AutoGenerateColumns="False"  IsReadOnly="True"  CanUserResizeColumns="True" 
+                        ShowGroupPanel="False" RowIndicatorVisibility="Collapsed"  telerik:RadDragAndDropManager.AllowDrop="True"  IsFilteringAllowed="False"		  
+                        RowDetailsVisibilityMode="Visible" SelectionUnit="FullRow"  AlternationCount="2" IsSynchronizedWithCurrentItem="True">
+
+                        <telerik:RadGridView.Columns >
+                            <telerik:GridViewDataColumn  HeaderCellStyle="{StaticResource SortableHeaderCellStyle}"   Width="0.2*"  Header="任务名称" DataMemberBinding="{Binding TaskName}" />
+                            <telerik:GridViewDataColumn  HeaderCellStyle="{StaticResource SortableHeaderCellStyle}"    Width="0.1*" Header="类型" DataMemberBinding="{Binding TaskType, Converter={StaticResource TaskTypeConvert}}"  />
+                            <telerik:GridViewDataColumn  HeaderCellStyle="{StaticResource SortableHeaderCellStyle}"    Width="0.1*"  Header="状态" DataMemberBinding="{Binding TaskStatus, Converter={StaticResource TaskStatusConvert}}"  />
+                            <telerik:GridViewDataColumn  HeaderCellStyle="{StaticResource SortableHeaderCellStyle}"   Width="0.1*" Header="布控人" DataMemberBinding="{Binding CreateUser}" />
+                            <telerik:GridViewDataColumn  HeaderCellStyle="{StaticResource NoneSortableHeaderCellStyle}"    Width="0.3*" Header="布控描述" DataMemberBinding="{Binding Description}" IsSortable="False" />
+                            <telerik:GridViewDataColumn  HeaderCellStyle="{StaticResource SortableHeaderCellStyle}"   Width="0.15*" Header="创建时间" DataMemberBinding="{Binding CreateDate, StringFormat=yyyy-MM-dd}" />
+
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+                </Border>
+
+            </StackPanel>
+            <Border BorderBrush="Gray" BorderThickness="0,1,0,0" Grid.Row="4" d:LayoutOverrides="Height">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Vertical" Margin="3" d:LayoutOverrides="Height, TopMargin, BottomMargin" Visibility="Collapsed">
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Fill="{DynamicResource ErrorBrush}" Height="12" Width="12" StrokeThickness="0"/>
+                            <TextBlock  TextWrapping="Wrap" Text="策略名称必须填写"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Fill="{DynamicResource ErrorBrush}" Height="12" Width="12" StrokeThickness="0"/>
+                            <TextBlock TextWrapping="Wrap" Text="策略名称已存在" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Fill="{DynamicResource ErrorBrush}" Height="12" Width="12" StrokeThickness="0"/>
+                            <TextBlock  TextWrapping="Wrap" Text="策略名称超过64个字符"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Fill="{DynamicResource ErrorBrush}" Height="12" Width="12" StrokeThickness="0"/>
+                            <TextBlock  TextWrapping="Wrap" Text="未选择比对方法" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Fill="{DynamicResource ErrorBrush}" Height="12" Width="12" StrokeThickness="0"/>
+                            <TextBlock  TextWrapping="Wrap" Text="非法相似度值" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Fill="{DynamicResource ErrorBrush}" Height="12" Width="12" StrokeThickness="0"/>
+                            <TextBlock  TextWrapping="Wrap" Text="非法时间值"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Fill="{DynamicResource ErrorBrush}" Height="12" Width="12" StrokeThickness="0"/>
+                            <TextBlock  TextWrapping="Wrap" Text="非法计数值"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <telerik:RadButton  Visibility="{Binding Visibility, ElementName=tipTaskType}"  Command="{Binding CommandSaveStrategy}"  Content="保存" Width="70" Height="26" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,15,15,13" Grid.Row="1" Padding="0" BorderThickness="1" />
+                </Grid>
+            </Border>
+
+        </Grid>
+
+    </Border>
+
+</telerik:RadWindow>

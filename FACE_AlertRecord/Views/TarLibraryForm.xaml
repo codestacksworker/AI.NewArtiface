@@ -1,0 +1,136 @@
+﻿<telerik2008:RadWindow x:Class="FACE_AlertRecord.Views.TarLibraryForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+             xmlns:local="clr-namespace:FACE_AlertRecord.Views"
+             xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+             xmlns:telerik2008="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" Header="目标库"
+             WindowStartupLocation="CenterOwner" ResizeMode="CanMinimize" Width="700" Height="500" 
+             Loaded="RadWindow_Loaded" Closed="RadWindow_Closed" Activated="RadWindow_Activated" Deactivated="RadWindow_Deactivated"
+             BorderThickness="0">
+
+    <telerik2008:RadWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/FACE_AlertRecord;component/StyleResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </telerik2008:RadWindow.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--<telerik2008:RadTabControl Background="Transparent">
+            <telerik2008:RadTabItem Header="目标库" Height="30" Width="100">-->
+        <!--目标库-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <Border>
+                        <telerik2008:RadGridView ItemsSource="{Binding TarLibraryList,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                    IsReadOnly="True" CanUserInsertRows="False" ShowColumnSortIndexes="True" CanUserFreezeColumns="False" AutoGenerateColumns="False"                                             
+                                    CanUserResizeColumns="True" ShowGroupPanel="False" RowIndicatorVisibility="Collapsed" IsFilteringAllowed="False"       
+                                    RowDetailsVisibilityMode="Visible" SelectionUnit="FullRow" SelectionMode="Single" AlternationCount="2" DataLoadMode="Asynchronous" 
+                                    ScrollMode="RealTime" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                    HorizontalContentAlignment="Center">
+                            <!--<telerik2008:RadGridView.ChildTableDefinitions>
+                                <telerik2008:GridViewTableDefinition />
+                            </telerik2008:RadGridView.ChildTableDefinitions>-->
+                            <telerik2008:RadGridView.Columns>
+                                <telerik2008:GridViewDataColumn Header="目标库名称" Width="200" HeaderTextAlignment="Center" TextAlignment="Center">
+                                    <telerik2008:GridViewDataColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <CheckBox IsChecked="{Binding IsChecked,Mode=TwoWay}" Margin="5,5,5,0">
+                                                    <i:Interaction.Triggers>
+                                                        <i:EventTrigger EventName="Checked">
+                                                            <i:InvokeCommandAction Command="{Binding DataContext.CommandChecked,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type telerik2008:RadGridView}}}"  CommandParameter="1"/>
+                                                        </i:EventTrigger>
+                                                        <i:EventTrigger EventName="Unchecked">
+                                                            <i:InvokeCommandAction Command="{Binding DataContext.CommandUnChecked,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type telerik2008:RadGridView}}}" CommandParameter="1"/>
+                                                        </i:EventTrigger>
+                                                    </i:Interaction.Triggers>
+                                                </CheckBox>
+                                                <TextBlock Text="{Binding TarLibName}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </telerik2008:GridViewDataColumn.CellTemplate>
+                                </telerik2008:GridViewDataColumn>
+                                <telerik2008:GridViewDataColumn HeaderTextAlignment="Center" DataMemberBinding="{Binding Describe}"     Header="描述"     Width="200"/>
+                                <telerik2008:GridViewDataColumn HeaderTextAlignment="Center" DataMemberBinding="{Binding TarPeopleNum}" Header="目标人数" Width="143"/>
+                                <telerik2008:GridViewDataColumn HeaderTextAlignment="Center" DataMemberBinding="{Binding TemplateNum}"  Header="模板数"   Width="143"/>
+                            </telerik2008:RadGridView.Columns>
+
+                            <!--<telerik2008:RadGridView.HierarchyChildTemplate>
+                                <DataTemplate>
+                                    <telerik2008:RadGridView x:Name="RadGridView1" GroupRenderMode="Flat"
+										         BorderThickness="0,1,0,1"
+										         GridLinesVisibility="None"
+										         CanUserFreezeColumns="False"
+										         AutoGenerateColumns="False"
+										         ItemsSource="{Binding TarLibChildList,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                 SelectedItem="{Binding TarLibChildData}"
+										         ShowGroupPanel="False"
+                                                 ShowColumnHeaders="False"
+										         IsReadOnly="True">
+                                        <telerik2008:RadGridView.Columns>
+                                            <telerik2008:GridViewDataColumn>
+                                                <telerik2008:GridViewDataColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <CheckBox IsChecked="{Binding IsChecked,Mode=TwoWay}" Margin="5,0,0,0">
+                                                                <i:Interaction.Triggers>
+                                                                    <i:EventTrigger EventName="Checked">
+                                                                        <i:InvokeCommandAction Command="{Binding DataContext.CommandChildChecked,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type telerik2008:RadGridView}}}"  CommandParameter="1"/>
+                                                                    </i:EventTrigger>
+                                                                    <i:EventTrigger EventName="Unchecked">
+                                                                        <i:InvokeCommandAction Command="{Binding DataContext.CommandChildUnChecked,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type telerik2008:RadGridView}}}" CommandParameter="1"/>
+                                                                    </i:EventTrigger>
+                                                                </i:Interaction.Triggers>
+                                                            </CheckBox>
+                                                            <TextBlock Text="{Binding TarPeople}"/>
+                                                        </StackPanel>
+                                                    </DataTemplate>
+                                                </telerik2008:GridViewDataColumn.CellTemplate>
+                                            </telerik2008:GridViewDataColumn>
+                                            <telerik2008:GridViewDataColumn DataMemberBinding="{Binding Describe}"     Width="150"/>
+                                            <telerik2008:GridViewDataColumn DataMemberBinding="{Binding LibStatus}"    Width="100"/>
+                                            <telerik2008:GridViewDataColumn DataMemberBinding="{Binding TarPeopleNum}" Width="100"/>
+                                            <telerik2008:GridViewDataColumn DataMemberBinding="{Binding TemplateNum}"  Width="100"/>
+                                        </telerik2008:RadGridView.Columns>
+                                    </telerik2008:RadGridView>
+                                </DataTemplate>
+                            </telerik2008:RadGridView.HierarchyChildTemplate>-->
+                        </telerik2008:RadGridView>
+                    </Border>
+                </ScrollViewer>
+            </Grid>
+
+            <GridSplitter Grid.Row="0" Width="5" Margin="0,0,-5,0" Background="Transparent"/>
+
+            <Grid Grid.Row="1">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Center" Margin="15,0">
+                            <Hyperlink Command="{Binding CommandCheckAll,Mode=TwoWay}"  CommandParameter="1">全选</Hyperlink>
+                    </TextBlock>
+                    <TextBlock VerticalAlignment="Center" Margin="15,0">
+                            <Hyperlink Command="{Binding CommandCancelAll,Mode=TwoWay}" CommandParameter="1">取消全选</Hyperlink>
+                    </TextBlock>
+                    <TextBlock Text="{Binding TarLibNumTxt,StringFormat=已选择{0}个目标库}" Margin="20,0" VerticalAlignment="Center"/>
+                    <telerik:RadButton Command="{Binding CommandOK}" CommandParameter="1" Content="确定" VerticalAlignment="Center" Width="60" Height="25" Background="DeepSkyBlue" BorderThickness="0" Margin="280,0,0,0"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <!--</telerik2008:RadTabItem>
+        </telerik2008:RadTabControl>-->
+    </Grid>
+</telerik2008:RadWindow>

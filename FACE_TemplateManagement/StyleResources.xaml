@@ -1,0 +1,75 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:converter="clr-namespace:SING.Infrastructure.Converter;assembly=SING.Infrastructure" 
+                   xmlns:converterLocal="clr-namespace:FACE_TemplateManagement.Converter"
+                     xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/SING.Infrastructure;component/Themes/Generic.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <converterLocal:FtIndexBinaryImgConverter x:Key="FtIndexBinaryImgConverter"/>
+    <converter:BinaryImageConverter x:Key="BinaryImageConverter"/>
+    <converter:GridRowBackgroundConverter x:Key="GridRowBackgroundConvert"/>
+    <converter:DefaultValueConverter x:Key="DefaultValueConverter"/>
+    <converter:DateTimeFormattingConverter  x:Key="DateTimeFormattingConverter"/>
+    <converter:ShortDateFormattingConverter x:Key="ShortDateFormattingConverter"/>
+    <converter:DateFormattingConverter x:Key="DateFormattingConverter"/>
+    <converter:SexConverter x:Key="SexConvert"/>
+    <converter:SstConverter x:Key="SstConvert"/>
+    <converter:IdTypeConverter x:Key="IdTypeConvert"/>
+
+
+    <ImageBrush x:Key="PhotoframeBackground" ImageSource="Images/PhotoframeBackground.png" Stretch="Fill"/>
+    <ImageBrush x:Key="PhotoframeBackgroundbelow" ImageSource="Images/PhotoframeBackgroundbelow.png" Stretch="Fill"/>
+
+    <Style x:Key="AlternateRow" TargetType="{x:Type telerik:GridViewRow}">
+        <Setter Property="Background" Value="{Binding Converter={StaticResource GridRowBackgroundConvert}}" />
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="DisplayVisualCues" Value="True" />
+                    <Condition Property="IsMouseOver" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="#4F8FAB" />
+                <Setter Property="Foreground" Value="White" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsSelected" Value="True" />
+                    <Condition Property="DisplayVisualCues" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="#59C9F5" />
+                <Setter Property="Foreground" Value="White" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+    
+    
+    <Style x:Key="NormalRow" TargetType="{x:Type telerik:GridViewRow}">
+
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="DisplayVisualCues" Value="True" />
+                    <Condition Property="IsMouseOver" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="#4F8FAB" />
+                <Setter Property="Foreground" Value="White" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsSelected" Value="True" />
+                    <Condition Property="DisplayVisualCues" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="#59C9F5" />
+                <Setter Property="Foreground" Value="White" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type Label}" x:Key="ToolBarLabelStyle" BasedOn="{StaticResource BaseLabel}">
+
+        <Setter Property="Margin" Value="2" />
+    </Style>
+
+</ResourceDictionary>

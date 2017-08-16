@@ -1,0 +1,180 @@
+<root>
+<EventLinkage>
+  <EventProperty maxtype="14">
+    <Event>
+        <Type Type="BYTE">1</Type>
+        <ID Type="BYTE"></ID>
+        <Event_Len Type="BYTE">13</Event_Len>
+        <EventContent>
+          <Enable Type="BYTE"></Enable>
+          <Sensitivity Type="BYTE"></Sensitivity>
+          <Threshold Type="BYTE"></Threshold>
+          <DebounceTime Type="WORD"></DebounceTime>
+        </EventContent>
+    </Event>    
+    <Event>
+      <Type Type="BYTE">2</Type>
+      <ID Type="BYTE"></ID>
+      <Event_Len Type="BYTE">4</Event_Len>
+      <EventContent>
+        <Enable Type="BYTE"></Enable>
+        <DebounceTime Type="WORD"></DebounceTime>
+        <TransducerType Type="BYTE"></TransducerType>
+      </EventContent>
+    </Event>
+    <Event>
+      <Type Type="BYTE">5</Type>
+      <ID Type="BYTE"></ID>
+      <Event_Len Type="BYTE">2</Event_Len>
+      <EventContent>
+        <Enable Type="BYTE"></Enable>
+        <LeastSpacePercent Type="BYTE"></LeastSpacePercent>
+      </EventContent>
+    </Event>
+    <Event>
+      <Type Type="BYTE">11</Type>
+      <ID Type="BYTE"></ID>
+      <Event_Len Type="BYTE">3</Event_Len>
+      <EventContent>
+        <Enable Type="BYTE"></Enable>
+        <ComUseType Type="BYTE"></ComUseType>
+        <PTZProtocol Type="BYTE"></PTZProtocol>
+      </EventContent>
+    </Event>
+    <Event>
+      <Type Type="BYTE"></Type>
+      <ID Type="BYTE"></ID>
+      <Event_Len Type="BYTE">1</Event_Len>
+      <EventContent>
+        <Enable Type="BYTE"></Enable>
+      </EventContent>
+    </Event>
+  </EventProperty>
+   <LinkageRule maxtype="13">
+    <EventType Type="BYTE"></EventType>
+    <EventId Type="BYTE"></EventId>
+    <Linkage_Count Type="BYTE"></Linkage_Count> 
+    <Linkage>
+      <LinkageNum Type="BYTE"></LinkageNum>
+      <LinkageEnable Type="BYTE"></LinkageEnable>
+      <LinkageType Type="BYTE">1</LinkageType>
+      <Linkage_Len Type="BYTE">15</Linkage_Len>
+      <LinkageContent>
+        <LinkageDelay Type="WORD"></LinkageDelay>
+        <LinkageDur Type="WORD"></LinkageDur>
+        <TransducerType Type="BYTE"></TransducerType>
+        <AlmOutIONum Type="WORD"></AlmOutIONum>
+        <OutInteval Type="DWORD"></OutInteval>
+        <OutCnt Type="DWORD"></OutCnt>
+      </LinkageContent>
+    </Linkage>
+
+    <Linkage>
+      <LinkageNum Type="BYTE"></LinkageNum>
+      <LinkageEnable Type="BYTE"></LinkageEnable>
+      <LinkageType Type="BYTE">2</LinkageType>
+      <Linkage_Len Type="BYTE">12</Linkage_Len>      
+      <LinkageContent>
+        <LinkageDelay Type="WORD"></LinkageDelay>
+        <LinkageDur Type="WORD"></LinkageDur>
+        <SnapInterval Type="DWORD"></SnapInterval>
+        <SnapCnt Type="WORD"></SnapCnt>
+        <SendBitFlag Type="WORD"></SendBitFlag>
+      </LinkageContent>
+    </Linkage>
+
+    <Linkage>
+      <LinkageNum Type="BYTE"></LinkageNum>
+      <LinkageEnable Type="BYTE"></LinkageEnable>
+      <LinkageType Type="BYTE">3</LinkageType>
+      <Linkage_Len Type="BYTE">10</Linkage_Len>
+      <LinkageContent>
+        <LinkageDelay Type="WORD"></LinkageDelay>
+        <LinkageDur Type="WORD"></LinkageDur>
+        <RecordTime Type="DWORD"></RecordTime>
+        <SendBitFlag Type="WORD"></SendBitFlag>
+      </LinkageContent>
+    </Linkage>
+
+    <Linkage>
+      <LinkageNum Type="BYTE"></LinkageNum>
+      <LinkageEnable Type="BYTE"></LinkageEnable>
+      <LinkageType Type="BYTE">4</LinkageType>
+      <Linkage_Len Type="BYTE">6</Linkage_Len>
+      <LinkageContent>
+        <LinkageDelay Type="WORD"></LinkageDelay>
+        <LinkageDur Type="WORD"></LinkageDur>
+        <LinkPtzType Type="BYTE"></LinkPtzType>
+        <LinkPtzValue Type="BYTE"></LinkPtzValue>
+      </LinkageContent>
+    </Linkage>
+
+     <Linkage>
+      <LinkageNum Type="BYTE"></LinkageNum>
+      <LinkageEnable Type="BYTE"></LinkageEnable>
+      <LinkageType Type="BYTE">5</LinkageType>
+       <Linkage_Len Type="BYTE">63</Linkage_Len>
+      <LinkageContent>
+        <LinkageDelay Type="WORD"></LinkageDelay>
+        <LinkageDur Type="WORD"></LinkageDur>
+        <SeiralNum Type="BYTE"></SeiralNum>
+        <SerialData Type="char" Len="58"></SerialData>
+      </LinkageContent>
+    </Linkage>   
+
+    <Linkage>
+      <LinkageNum Type="BYTE"></LinkageNum>
+      <LinkageEnable Type="BYTE"></LinkageEnable>
+      <LinkageType Type="BYTE">6</LinkageType>
+      <Linkage_Len Type="BYTE">45</Linkage_Len>
+      <LinkageContent>
+        <LinkageDelay Type="WORD"></LinkageDelay>
+        <LinkageDur Type="WORD"></LinkageDur>
+        <OverlayType Type="BYTE"></OverlayType>
+        <OSDcontent Type="char" Len="36"></OSDcontent>
+        <X Type="WORD"></X>
+        <Y Type="WORD"></Y>
+      </LinkageContent>
+    </Linkage> 
+
+    <Linkage>
+      <LinkageNum Type="BYTE"></LinkageNum>
+      <LinkageEnable Type="BYTE"></LinkageEnable>
+      <LinkageType Type="BYTE">7</LinkageType>
+      <Linkage_Len Type="BYTE">8</Linkage_Len>
+      <LinkageContent>
+        <LinkageDelay Type="WORD"></LinkageDelay>
+        <LinkageDur Type="WORD"></LinkageDur>
+        <ClientBitMap Type="DWORD"></ClientBitMap>
+      </LinkageContent>
+    </Linkage>    
+   
+    <Linkage>
+      <LinkageNum Type="BYTE"></LinkageNum>
+      <LinkageEnable Type="BYTE"></LinkageEnable>
+      <LinkageType Type="BYTE">8</LinkageType>
+      <Linkage_Len Type="BYTE">5</Linkage_Len>
+      <LinkageContent>
+        <LinkageDelay Type="WORD"></LinkageDelay>
+        <LinkageDur Type="WORD"></LinkageDur>
+        <Open Type="BYTE"></Open>
+      </LinkageContent>
+    </Linkage>
+     
+     <Linkage>
+       <LinkageNum Type="BYTE"></LinkageNum>
+       <LinkageEnable Type="BYTE"></LinkageEnable>
+       <LinkageType Type="BYTE">0</LinkageType>
+       <Linkage_Len Type="BYTE">0</Linkage_Len>
+     </Linkage>
+   </LinkageRule>
+</EventLinkage>
+<EventLinkage>
+  <EventProperty>
+    <AswCode></AswCode>
+  </EventProperty>
+  <LinkageRule>
+    <AswCode></AswCode>
+  </LinkageRule>
+</EventLinkage>  
+</root>

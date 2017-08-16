@@ -1,0 +1,84 @@
+﻿<telerik2008:RadWindow x:Class="FACE_AlertRecord.Views.MonitorTasksForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FACE_AlertRecord.Views"
+             xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+             xmlns:telerik2008="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             Header="布控任务" WindowStartupLocation="CenterOwner" ResizeMode="CanMinimize" Width="700" Height="500"
+             Loaded="RadWindow_Loaded" Closed="RadWindow_Closed" Activated="RadWindow_Activated" Deactivated="RadWindow_Deactivated"
+             BorderThickness="0">
+
+    <telerik2008:RadWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/FACE_AlertRecord;component/StyleResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </telerik2008:RadWindow.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <Border>
+                    <telerik2008:RadGridView ItemsSource="{Binding MonitorTaskList,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                            IsReadOnly="True" CanUserInsertRows="False" ShowColumnSortIndexes="True" CanUserFreezeColumns="False" AutoGenerateColumns="False"                                             
+                            CanUserResizeColumns="True" ShowGroupPanel="False" RowIndicatorVisibility="Collapsed" telerik2008:RadDragAndDropManager.AllowDrop="True" IsFilteringAllowed="False"       
+                            RowDetailsVisibilityMode="Visible" SelectionUnit="FullRow" SelectionMode="Single" AlternationCount="2" DataLoadMode="Asynchronous" 
+                            ScrollMode="RealTime" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                            HorizontalContentAlignment="Center">
+                        <telerik2008:RadGridView.Columns>
+                            <telerik2008:GridViewDataColumn Header="任务名称" HeaderTextAlignment="Center" Width="200" TextAlignment="Center">
+                                <telerik2008:GridViewDataColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <CheckBox IsChecked="{Binding IsChecked,Mode=TwoWay}" Margin="5,5,5,0">
+                                                <i:Interaction.Triggers>
+                                                    <i:EventTrigger EventName="Checked">
+                                                        <i:InvokeCommandAction Command="{Binding DataContext.CommandChecked,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type telerik2008:RadGridView}}}"  CommandParameter="0"/>
+                                                    </i:EventTrigger>
+                                                    <i:EventTrigger EventName="Unchecked">
+                                                        <i:InvokeCommandAction Command="{Binding DataContext.CommandUnChecked,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type telerik2008:RadGridView}}}" CommandParameter="0"/>
+                                                    </i:EventTrigger>
+                                                </i:Interaction.Triggers>
+                                            </CheckBox>
+                                            <TextBlock Text="{Binding TaskName}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </telerik2008:GridViewDataColumn.CellTemplate>
+                            </telerik2008:GridViewDataColumn>
+                            <telerik2008:GridViewDataColumn Header="描述"   HeaderTextAlignment="Center" DataMemberBinding="{Binding Description}" Width="200"/>
+                            <telerik2008:GridViewDataColumn Header="布控人" HeaderTextAlignment="Center" DataMemberBinding="{Binding CreateUser}" Width="160"/>
+                            <telerik2008:GridViewDataColumn Header="状态"   HeaderTextAlignment="Center" DataMemberBinding="{Binding TaskStatus}" Width="126"/>
+                        </telerik2008:RadGridView.Columns>
+                    </telerik2008:RadGridView>
+                </Border>
+            </ScrollViewer>
+        </Grid>
+
+        <GridSplitter Grid.Row="0" Width="5" Margin="0,0,-5,0" Background="Transparent"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="17*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,8">
+                <TextBlock VerticalAlignment="Center" Margin="15,0">
+                    <Hyperlink Command="{Binding CommandCheckAll,Mode=TwoWay}"  CommandParameter="0">全选</Hyperlink>
+                </TextBlock>
+                <TextBlock VerticalAlignment="Center" Margin="15,0">
+                    <Hyperlink Command="{Binding CommandCancelAll,Mode=TwoWay}" CommandParameter="0">取消全选</Hyperlink>
+                </TextBlock>
+                <TextBlock Text="{Binding MonTaskNumTxt,StringFormat=已选择{0}个布控任务}" Margin="20,0" VerticalAlignment="Center"/>
+                <telerik:RadButton Command="{Binding CommandOK}" CommandParameter="0" Content="确定" Width="60" Height="25" Background="DeepSkyBlue" BorderThickness="0" Margin="280,0,0,0"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</telerik2008:RadWindow>

@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{588FF265-19EA-4715-BE27-23C2393E7ED2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FACE_AlertRecord</RootNamespace>
+    <AssemblyName>FACE_AlertRecord</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ExternalFrameworks">
+      <HintPath>..\FACE\Lib\ExternalFrameworks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\FACE\Lib\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity">
+      <HintPath>..\FACE\Lib\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions">
+      <HintPath>..\FACE\Lib\Microsoft.Practices.Prism.MefExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\FACE\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="Sofa.Commons">
+      <HintPath>..\FACE\Lib\Sofa.Commons.dll</HintPath>
+    </Reference>
+    <Reference Include="Sofa.Component">
+      <HintPath>..\FACE\Lib\Sofa.Component.dll</HintPath>
+    </Reference>
+    <Reference Include="Sofa.Container">
+      <HintPath>..\FACE\Lib\Sofa.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Sofa.Themes">
+      <HintPath>..\FACE\Lib\Sofa.Themes.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition.Codeplex">
+      <HintPath>..\FACE\Lib\System.ComponentModel.Composition.Codeplex.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FACE\Lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FACE\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FACE\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FACE\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FACE\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FACE\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2017.2.614.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FACE\Lib\Telerik WPF VSExtensions\Telerik\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converter\VideoInfoConvert.cs" />
+    <Compile Include="Models\AlarmPromptData.cs" />
+    <Compile Include="Models\AreaChannelData.cs" />
+    <Compile Include="Models\MonitorTaskData.cs" />
+    <Compile Include="Models\TarLibraryData.cs" />
+    <Compile Include="ModuleInit.cs" />
+    <Compile Include="Services\DataService.cs" />
+    <Compile Include="Services\HelpService\AlarmInfoService.cs" />
+    <Compile Include="Services\HelpService\AlarmPromptService.cs" />
+    <Compile Include="Services\HelpService\AreaChannelService.cs" />
+    <Compile Include="Services\HelpService\MonTaskService.cs" />
+    <Compile Include="Services\HelpService\TarLibraryService.cs" />
+    <Compile Include="Services\IDataService.cs" />
+    <Compile Include="ViewModels\ViewModel.cs" />
+    <Compile Include="Views\AlarmPromptListView.xaml.cs">
+      <DependentUpon>AlarmPromptListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AlarmInfoForm.xaml.cs">
+      <DependentUpon>AlarmInfoForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AreaChannelForm.xaml.cs">
+      <DependentUpon>AreaChannelForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomDateForm.xaml.cs">
+      <DependentUpon>CustomDateForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MonitorTasksForm.xaml.cs">
+      <DependentUpon>MonitorTasksForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageToolBar.xaml.cs">
+      <DependentUpon>PageToolBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QueryToolBar.xaml.cs">
+      <DependentUpon>QueryToolBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchToolBar.xaml.cs">
+      <DependentUpon>SearchToolBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converter\ScheduleConverter.cs" />
+    <Compile Include="Converter\SelectedSyncBehavior.cs" />
+    <Compile Include="Views\TarLibraryForm.xaml.cs">
+      <DependentUpon>TarLibraryForm.xaml</DependentUpon>
+    </Compile>
+    <Page Include="StyleResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AlarmPromptListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AlarmInfoForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AreaChannelForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CustomDateForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MonitorTasksForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageToolBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QueryToolBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SearchToolBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TarLibraryForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DB_stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DelPlan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Editor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MinView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\newPlan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PhotoframeBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PhotoframeBackgroundbelow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\SavePlan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Split.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\shishi4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FACE\SING.Data\Dev_SING.Data.csproj">
+      <Project>{35a1c45e-f5f7-4ee7-8681-3228648eb93b}</Project>
+      <Name>Dev_SING.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FACE\SING.Infrastructure\Dev_SING.Infrastructure.csproj">
+      <Project>{bc55dd33-7901-48e3-b094-ba6d68c323aa}</Project>
+      <Name>Dev_SING.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FACE\SING.Resource\Dev_SING.Resource.csproj">
+      <Project>{40122706-5a01-4307-ba59-b47d489038dd}</Project>
+      <Name>Dev_SING.Resource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FACE_DynamicComparison\FACE_DynamicComparison.csproj">
+      <Project>{4B6C435F-C06F-485F-AAF0-6C1681AD25EB}</Project>
+      <Name>FACE_DynamicComparison</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FACE_MonitorTasks\FACE_MonitorTasks.csproj">
+      <Project>{b1c537d7-0994-4a1a-8a73-6c78f1e7f36f}</Project>
+      <Name>FACE_MonitorTasks</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\YangYang1.jpg" />
+    <Resource Include="Images\YangYang2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bing4.jpg" />
+    <Resource Include="Images\feng5.jpg" />
+    <Resource Include="Images\shishi11.jpg" />
+    <Resource Include="Images\ting1.jpg" />
+    <Resource Include="Images\yang5.jpg" />
+    <Resource Include="Images\yang7.jpg" />
+    <Resource Include="Images\ying2.jpg" />
+    <Resource Include="Images\ying6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\yangmi1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\aa.jpeg" />
+    <Resource Include="Images\bb.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\u2770.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y /I "$(TargetPath)" "$(SolutionDir)FACE\Shell\bin\Debug\Modules"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

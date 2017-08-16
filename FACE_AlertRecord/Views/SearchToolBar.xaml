@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="FACE_AlertRecord.Views.SearchToolBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FACE_AlertRecord.Views"
+             xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+             xmlns:telerikNavigation="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Navigation"
+             xmlns:Controls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:converter="clr-namespace:FACE_AlertRecord.Converter"
+             xmlns:converter1="clr-namespace:SING.Infrastructure.Converter;assembly=SING.Infrastructure"
+             mc:Ignorable="d" Background="#FF021019">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/FACE_AlertRecord;component/StyleResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <converter1:DateTimeFormattingConverter  x:Key="DateTimeFormattingConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <!--<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">-->
+        <telerikNavigation:RadToolBar GripVisibility="Collapsed" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Foreground="{Binding Converter={StaticResource ForeColorConvert}}">
+
+            <StackPanel Orientation="Horizontal" Margin="60,0" VerticalAlignment="Center">
+                <TextBox Text="{Binding MonTaskTxt,Mode=TwoWay}" Background="White" Width="200" Foreground="Black" BorderBrush="Gray" Height="30" BorderThickness="1"/>
+                <telerik:RadButton Command="{Binding CommandSelectMonTasks}" Margin="10,0" Height="30" Width="100" Background="Gray" BorderThickness="0">
+                    <TextBlock Text="{Binding Source={StaticResource Res},Path=Res.Button.ui_btnSelectMonTasks}" />
+                </telerik:RadButton>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,40,0" VerticalAlignment="Center" >
+                <TextBox Text="{Binding TarLibTxt, Mode=TwoWay}" Background="White" Width="200" Foreground="Black" BorderBrush="Gray" Height="30"/>
+                <telerik:RadButton Command="{Binding CommandSelectTarLibrary}" Margin="10,0" Height="30" Width="100" Background="Gray" BorderThickness="0">
+                    <TextBlock Text="{Binding Res.Button.ui_btnSelectTarLibrary, Source={StaticResource Res}}"/>
+                </telerik:RadButton>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="40,0" VerticalAlignment="Center">
+                <TextBox Text="{Binding AreaChannelTxt,Mode=TwoWay}" Background="White" Width="200" Foreground="Black" BorderBrush="Gray" Height="30"/>
+                <telerik:RadButton Command="{Binding CommandSelectArea}" Margin="10,0" Height="30" Width="100" Background="Gray" BorderThickness="0">
+                    <TextBlock Text="{Binding Source={StaticResource Res},Path=Res.Button.ui_btnSelectArea}"/>
+                </telerik:RadButton>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="40,0" VerticalAlignment="Center">
+                <Controls:RadComboBox x:Name="CmbIDType" Command="{Binding CommandSerachExcluded}" ItemsSource="{Binding IDTypeList}" Width="100" Height="30" SelectedIndex="0">
+                    <Controls:RadComboBox.Items>
+                        <Controls:RadComboBoxItem Content="全部"/>
+                        <Controls:RadComboBoxItem Content="身份证"/>
+                        <Controls:RadComboBoxItem Content="姓名"/>
+                        <Controls:RadComboBoxItem Content="编号"/>
+                        <Controls:RadComboBoxItem Content="案件号"/>
+                    </Controls:RadComboBox.Items>
+                </Controls:RadComboBox>
+                <TextBox Text="{Binding IDNumTxt,Mode=TwoWay}" Background="White" Width="200" Foreground="Black" BorderBrush="Gray" Height="30" Margin="10,0,0,0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="40,0,0,0" VerticalAlignment="Center">
+                <telerik:RadButton Command="{Binding CommandSeniorQuery}" Height="30" Background="Gray" BorderThickness="0">
+                    <TextBlock Text="{Binding Source={StaticResource Res},Path=Res.Button.ui_btnSearch}" Width="50" TextAlignment="Center" />
+                </telerik:RadButton>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50,0,30,0">
+                        <Hyperlink Command="{Binding CommandClearCondition}" FontSize="14"> 清除条件</Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </telerikNavigation:RadToolBar>
+        <!--</ScrollViewer>-->
+    </Grid>
+</UserControl>

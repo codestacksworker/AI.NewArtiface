@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="FACE_TemplateManagement.Views.SearchToolBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FACE_TemplateManagement.Views"
+             xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+             xmlns:telerikNavigation="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Navigation"
+             xmlns:Controls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:converter="clr-namespace:FACE_TemplateManagement.Converter"
+             d:DesignWidth="300" d:DesignHeight="400"
+                xmlns:converter1="clr-namespace:SING.Infrastructure.Converter;assembly=SING.Infrastructure"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/FACE_TemplateManagement;component/StyleResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <converter:EnabledStatusConvert x:Key="EnabledStatusConvert"/>
+            <converter1:DateTimeFormattingConverter  x:Key="DateTimeFormattingConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Resources>
+            <Style x:Key="{x:Type TextBlock}" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+            </Style>
+            <Style x:Key="{x:Type TextBox}" TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseTextBox}">
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+
+            </Style>
+            
+            <Style x:Key="{x:Type Button}" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseButton}">
+                <Setter Property="VerticalAlignment" Value="Stretch" />
+                <Setter Property="HorizontalAlignment" Value="Stretch" />
+            </Style>
+            <Style x:Key="{x:Type Controls:RadNumericUpDown}" TargetType="{x:Type Controls:RadNumericUpDown}" BasedOn="{StaticResource BaseRadNumericUpDown}">
+                <Setter Property="NumberDecimalDigits" Value="0"/>
+                <Setter Property="FontFamily" Value="微软雅黑"/>
+                <Setter Property="VerticalAlignment" Value="Stretch" />
+                <Setter Property="HorizontalAlignment" Value="Stretch" />
+                <Setter Property="NumberDecimalDigits" Value="0" />
+            </Style>
+
+        </Grid.Resources>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <telerikNavigation:RadToolBar x:Name="mainToolBar" GripVisibility="Collapsed" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <StackPanel Orientation="Vertical" Width="35">
+                    <TextBlock  Text="操作"  />
+                    <telerik:RadButton Content="{Binding Source={StaticResource Res},Path=Res.Button.ui_btnSearch}" ToolTip="查询(Enter)" Command="{Binding CommandSearchFtdb}">
+                        <!--<i:Interaction.Triggers>
+                            <i:EventTrigger  EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding CommandTemplateLibListQuery}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>-->
+                    </telerik:RadButton>
+                </StackPanel>
+                <telerikNavigation:RadToolBarSeparator />
+
+                <StackPanel Orientation="Vertical" Width="104">
+                    <TextBlock  Text="起始日期"  />
+                    <Controls:RadDatePicker  Height="23" Name="dpBegin" Width="104">
+                        <Controls:RadDatePicker.SelectedDate>
+                            <Binding Path="QueryConditionFtdb.StartTime"   Mode="TwoWay"  Converter="{StaticResource DateTimeFormattingConverter}"  UpdateSourceTrigger="PropertyChanged"/>
+                        </Controls:RadDatePicker.SelectedDate>
+                    </Controls:RadDatePicker>
+                </StackPanel>
+                <telerikNavigation:RadToolBarSeparator />
+
+                <StackPanel Orientation="Vertical" Width="104">
+                    <TextBlock  Text="截止日期" />
+                    <Controls:RadDatePicker    Height="23" Name="dpEnd" Width="104" >
+                        <Controls:RadDatePicker.SelectedDate>
+                            <Binding Path="QueryConditionFtdb.EndTime" Mode="TwoWay"  Converter="{StaticResource DateTimeFormattingConverter}"   UpdateSourceTrigger="PropertyChanged"/>
+                        </Controls:RadDatePicker.SelectedDate>
+                    </Controls:RadDatePicker>
+                </StackPanel>
+                <telerikNavigation:RadToolBarSeparator />
+
+                <StackPanel Orientation="Vertical" Width="100">
+                    <TextBlock  Text="模板名称"  />
+                    <TextBox  Background="White" Text="{Binding Path=QueryConditionFtdb.TemplateDbName,Mode=OneWayToSource,UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                </StackPanel>
+                <telerikNavigation:RadToolBarSeparator />
+
+                <StackPanel Orientation="Vertical" Width="100">
+                    <TextBlock  Text="启用状态"  />
+                    <Controls:RadComboBox ClearSelectionButtonVisibility="Visible" ClearSelectionButtonContent="重置选项">
+                        <Controls:RadComboBox.Text>
+                            <Binding Path="QueryConditionFtdb.IsUsed" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" Converter="{StaticResource EnabledStatusConvert}"/>
+                        </Controls:RadComboBox.Text>
+                        <Controls:RadComboBox.Items>
+                            <Controls:RadComboBoxItem Content="是"/>
+                            <Controls:RadComboBoxItem Content="否"/>
+                        </Controls:RadComboBox.Items>
+                    </Controls:RadComboBox>
+                </StackPanel>
+                <telerikNavigation:RadToolBarSeparator />
+
+                <!--<StackPanel Orientation="Vertical" Width="100">
+                    <TextBlock  Text="模板库类型"  />
+                    <Controls:RadComboBox ItemsSource="{Binding DefDbTypeDatas}" SelectedValuePath="Type" DisplayMemberPath="Description" ClearSelectionButtonVisibility="Visible" ClearSelectionButtonContent="重置选项">
+                        <Controls:RadComboBox.SelectedValue>
+                            <Binding Path="QueryConditionFtdb.TemplateDbType" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" />
+                        </Controls:RadComboBox.SelectedValue>
+                    </Controls:RadComboBox>
+                </StackPanel>
+                <telerikNavigation:RadToolBarSeparator />-->
+
+                <StackPanel Orientation="Vertical" Width="180">
+                    <TextBlock Text="备注"  />
+                    <TextBox Background="White" Text="{Binding Path=QueryConditionFtdb.TemplateDbDescription,Mode=OneWayToSource,UpdateSourceTrigger=PropertyChanged}" Width="180"/>
+                </StackPanel>
+                <telerikNavigation:RadToolBarSeparator />
+            </telerikNavigation:RadToolBar>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

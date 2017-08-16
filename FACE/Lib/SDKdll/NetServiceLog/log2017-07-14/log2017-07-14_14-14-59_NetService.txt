@@ -1,0 +1,30 @@
+2017-07-14-14-14-59-660  LNOTSET  no   (.\NetService.cpp 135) 操作系统为_WIN32 
+
+2017-07-14-14-14-59-664  LNOTSET  no   (.\ThreadIOCP.cpp 58)  完成端口开始接收数据 
+
+2017-07-14-14-14-59-664  LNOTSET  no   (.\ThreadIOCP.cpp 58)  完成端口开始接收数据 
+
+2017-07-14-14-14-59-684  LNOTSET  no   (.\ThreadPoolModule.cpp 397)  增加线程条数 2
+ 
+2017-07-14-14-14-59-684  LNOTSET  no   (.\CommunicationManager.cpp 774) 通知上层新连接到达线程开始运行
+
+2017-07-14-14-14-59-689  LNOTSET  no   (.\NetService.cpp 611) 通道04ECFCD0创建成功, new socket 3408, szRemoteIP:192.168.1.47, 		uiRemotePort:10002, szLocalIP:192.168.1.47, uiLocalPort:8477
+ 
+2017-07-14-14-15-37-121  LNOTSET  no   (.\ThreadIOCP.cpp 288)  通道04ECFCD0中断，指定的网络名不再可用 ,error = 64  ,szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:8477 
+
+2017-07-14-14-15-37-121  LNOTSET  no   (.\WinTcpSocket.cpp 302)  CWinTcpSocket::SendData error 10054 
+
+2017-07-14-14-15-37-121  LNOTSET  no   (.\SocketChanel.cpp 220) 通道04ECFCD0发送数据失败6, localport=8477, RemotePort=10002, nLen=0,  unDataLen=16 
+
+2017-07-14-14-15-37-121  LNOTSET  no   (.\ThreadIOCP.cpp 297)  完成端口不使用该通道04ECFCD0 FALSE == bRet 
+
+2017-07-14-14-15-37-130  LNOTSET  no   (.\CommunicationManager.cpp 269) 通知上层通道04ECFCD0中断, szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:8477 
+ 
+2017-07-14-14-15-50-003  LNOTSET  no   (.\CommunicationManager.cpp 274) 通知上层通道04ECFCD0中断,通知完毕, szRemoteIP:192.168.1.47, uiRemotePort:10002, uiLocalPort:8477 
+ 
+2017-07-14-14-15-52-005  LNOTSET  no   (.\SocketChanel.cpp 304) 通道04ECFCD0被请求关闭, localport=8477, RemotePort=10002 
+
+2017-07-14-14-15-52-014  LNOTSET  no   (.\CommunicationManager.cpp 404) 释放通道04ECFCD0内存
+ 
+2017-07-14-14-15-52-015  LNOTSET  no   (.\NetService.cpp 611) 通道04EE5F08创建成功, new socket 3408, szRemoteIP:192.168.1.47, 		uiRemotePort:10002, szLocalIP:192.168.1.47, uiLocalPort:8511
+ 

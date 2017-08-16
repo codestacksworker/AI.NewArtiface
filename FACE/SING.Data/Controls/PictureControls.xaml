@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="SING.Data.Controls.PictureControls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SING.Data.Controls"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <DataTemplate x:Key="PictureChange">
+            <Border BorderBrush="Black" BorderThickness="1" d:DesignWidth="352.351" d:DesignHeight="74.734">
+                <Grid>
+                    <!--<Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>-->
+                    <!--<Image Source="{Binding FcapSceneImg}" Grid.RowSpan="2" Stretch="UniformToFill" />-->
+                    <!--<TextBlock Text="{Binding Title}"  VerticalAlignment="Center"  Background="#5001FFFF" Grid.Row="1"/>-->
+                    <local:PictureIndicateControl  ImageData="{Binding FcapSceneImg}"  IndicateWidth="{Binding FcapFaceCx}"
+                        IndicateHeight="{Binding FcapFaceCy}"  IndicateLeft="{Binding FcapFaceX}" IndicateTop="{Binding FcapFaceY}" 
+                        BrushLine="Transparent"  BrushIndicate="LightGreen" IndicateThickness="2" LineThickness="2"
+                        />
+                </Grid>
+            </Border>
+        </DataTemplate>
+        <Style x:Key="ListViewItem" TargetType="{x:Type ListViewItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                        <Border Name="BD_Collector" CornerRadius="1" Background="LightBlue" Margin="5,5,0,0">
+                            <TextBlock Text="{Binding Site}" Height="43" Width="43" TextAlignment="Center" FontSize="12" Foreground="#FFFFFF" Opacity="0.2"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="BD_Collector"  Property="Background" Value="CornflowerBlue" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="BD_Collector" Property="Background" Value="AliceBlue" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <UserControl ContentTemplate="{StaticResource PictureChange}"
+                     Content="{Binding SelectedItem,ElementName=listBoxPic}" Grid.RowSpan="1"/>
+        <ListView x:Name="listBoxPic" Grid.Row="1" HorizontalAlignment="Stretch" ItemContainerStyle="{StaticResource ResourceKey=ListViewItem}" Height="96" SelectionChanged="listBoxPic_SelectionChanged" Visibility="Collapsed">
+            <ListView.Template>
+                <ControlTemplate>
+                    <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Disabled" >
+                        <ItemsPresenter />
+                    </ScrollViewer>
+                </ControlTemplate>
+            </ListView.Template>
+            <ListView.Background>
+                <SolidColorBrush />
+            </ListView.Background>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel IsItemsHost="True"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+    </Grid>
+</UserControl>
